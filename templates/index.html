@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QRShield — QR Payment Fraud Detection</title>
+  <link rel="stylesheet" href="/static/css/style.css?v=9"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    /* Critical layout — inline so it can never be blocked by cache */
+    html,body{margin:0;padding:0;background:#0a0c12;color:#e8ecf4;font-family:'Inter',system-ui,sans-serif;}
+    body{display:flex;flex-direction:row;min-height:100vh;}
+    .sidebar{width:240px;min-width:240px;max-width:240px;min-height:100vh;background:#0d1018;border-right:1px solid #222840;display:flex;flex-direction:column;flex-shrink:0;}
+    .main-wrap{flex:1;min-width:0;overflow-y:auto;display:flex;flex-direction:column;}
+    .main-inner{flex:1;padding:0 26px 32px;}
+    .view{display:none;}.view.active{display:block;}
+  </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-brand">
+    <span class="sb-shield">🛡</span>
+    <div>
+      <span class="sb-name">QR<strong>Shield</strong></span>
+      <span class="sb-tag">Fraud Detection</span>
+    </div>
+  </div>
+  <nav class="sb-nav">
+    <a href="#" class="nav-item active" data-view="scanner"><span class="nav-icon">🔍</span><span>Scanner</span></a>
+    <a href="#" class="nav-item" data-view="stats"><span class="nav-icon">📊</span><span>Statistics</span></a>
+    <a href="#" class="nav-item" data-view="history"><span class="nav-icon">📋</span><span>Scan History</span></a>
+    <a href="#" class="nav-item" data-view="about"><span class="nav-icon">ℹ️</span><span>About</span></a>
+  </nav>
+  <div class="sb-footer">
+    <div class="health-pill">
+      <span class="hdot" id="hdot"></span>
+      <span id="htext">Checking…</span>
+    </div>
+    <div class="ver">v1.0.0</div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-wrap">
+<div class="main-inner">
+
+  <!-- SCANNER VIEW -->
+  <div id="view-scanner" class="view active">
+    <div class="topbar">
+      <div class="tb-title">
+        <h1>QR Code Scanner</h1>
+        <p>Analyze any QR code for payment fraud and deception</p>
+      </div>
+      <a href="/docs" target="_blank" rel="noopener" class="btn-ghost">API Docs →</a>
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats-row">
+      <div class="stat-card"><div class="stat-ico ic-blue">🛡</div><div><span class="sv" id="s-total">0</span><span class="sl">Total Scans</span></div></div>
+      <div class="stat-card"><div class="stat-ico ic-green">✅</div><div><span class="sv" id="s-safe">0</span><span class="sl">Safe</span></div></div>
+      <div class="stat-card"><div class="stat-ico ic-yellow">⚠️</div><div><span class="sv" id="s-sus">0</span><span class="sl">Suspicious</span></div></div>
+      <div class="stat-card"><div class="stat-ico ic-orange">🚨</div><div><span class="sv" id="s-high">0</span><span class="sl">High Risk</span></div></div>
+      <div class="stat-card"><div class="stat-ico ic-red">🛑</div><div><span class="sv" id="s-crit">0</span><span class="sl">Critical</span></div></div>
+    </div>
+
+    <!-- Grid -->
+    <div class="dash-grid">
+
+      <!-- Input card -->
+      <section class="card">
+        <div class="card-hdr">
+          <h2 class="card-title">Analyze a QR Code</h2>
+          <span class="card-badge">Input</span>
+        </div>
+        <div class="card-body">
+
+          <div class="tab-group" role="tablist">
+            <button class="tab-btn active" data-tab="tab-upload" role="tab" aria-selected="true">📷 Image Upload</button>
+            <button class="tab-btn" data-tab="tab-payload" role="tab" aria-selected="false">📝 Paste Payload</button>
+          </div>
+
+          <div id="tab-upload" class="tab-pane">
+            <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Upload QR code image">
+              <div class="drop-inner" id="drop-lbl">
+                <span class="drop-ico">📂</span>
+                <p class="drop-t">Drag &amp; drop a QR image here</p>
+                <p class="drop-s">or click to browse &middot; JPEG / PNG / WebP / BMP</p>
+              </div>
+              <img id="prev-img" class="prev-img hidden" alt="QR preview"/>
+            </div>
+            <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/bmp" class="sr-only"/>
+          </div>
+
+          <div id="tab-payload" class="tab-pane hidden">
+            <label class="f-lbl" for="payload-inp">Paste the decoded QR string</label>
+            <textarea id="payload-inp" class="f-area" rows="4"
+              placeholder="upi://pay?pa=merchant@okicici&pn=Shop&am=150&cu=INR&#10;or https://pay.example.com/checkout"></textarea>
+          </div>
+
+          <div class="msg-wrap">
+            <label class="f-lbl" for="msg-inp">
+              💬 Accompanying Message
+              <span class="opt-chip">optional &middot; enables deception detection</span>
+            </label>
+            <textarea id="msg-inp" class="f-area" rows="3" style="margin-top:6px"
+              placeholder="e.g. Scan this QR to receive your Rs 5000 refund"></textarea>
+            <p class="f-hint">NLP engine compares message intent with actual QR action to detect fake refunds, urgency, and authority spoofing.</p>
+          </div>
+
+          <details class="ctx-acc">
+            <summary class="ctx-sum">
+              &#9881;&#65039; Optional Scan Context
+              <span class="ctx-hint">&mdash; improves accuracy</span>
+            </summary>
+            <div class="ctx-grid">
+              <div class="ctx-f"><label for="ctx-co">Your Country (ISO)</label><input id="ctx-co" type="text" maxlength="2" placeholder="IN"/></div>
+              <div class="ctx-f"><label for="ctx-mc">Merchant Country</label><input id="ctx-mc" type="text" maxlength="2" placeholder="IN"/></div>
+              <div class="ctx-f"><label for="ctx-dv">Device Type</label>
+                <select id="ctx-dv"><option value="">— select —</option><option value="mobile">Mobile</option><option value="desktop">Desktop</option><option value="tablet">Tablet</option></select>
+              </div>
+              <div class="ctx-f"><label for="ctx-wf">Network</label>
+                <select id="ctx-wf"><option value="">— select —</option><option value="true">Wi-Fi</option><option value="false">Mobile Data</option></select>
+              </div>
+              <div class="ctx-f"><label for="ctx-ss">Wi-Fi SSID</label><input id="ctx-ss" type="text" maxlength="64" placeholder="Airport Free WiFi"/></div>
+              <div class="ctx-f"><label for="ctx-am">Amount Shown (Rs.)</label><input id="ctx-am" type="number" min="0" placeholder="0.00"/></div>
+            </div>
+          </details>
+
+          <button id="scan-btn" class="btn-scan" disabled aria-disabled="true">
+            <span id="scan-txt">🔍 Analyze QR</span>
+            <span id="scan-spin" class="spinner hidden" aria-hidden="true"></span>
+          </button>
+          <p id="inp-err" class="inp-err hidden" role="alert"></p>
+        </div>
+      </section>
+
+      <!-- Result card -->
+      <section class="card" aria-live="polite">
+
+        <div id="r-idle" class="r-idle">
+          <div class="idle-circle">🔎</div>
+          <h3>Ready to Scan</h3>
+          <p>Upload an image or paste a QR payload.<br/>Full results appear here.</p>
+        </div>
+
+        <div id="r-load" class="r-load hidden">
+          <div class="load-ring"></div>
+          <p>Analyzing QR code…</p>
+          <p class="load-sub">Running decode · parse · URL · context · deception checks</p>
+        </div>
+
+        <div id="r-content" class="card-body hidden">
+
+          <!-- Verdict -->
+          <div id="vrd-banner" class="vrd-banner">
+            <div class="vrd-left">
+              <span id="vrd-icon" class="vrd-icon"></span>
+              <div>
+                <div id="vrd-label" class="vrd-label"></div>
+                <div id="vrd-score" class="vrd-score"></div>
+              </div>
+            </div>
+            <div class="gauge-wrap">
+              <svg class="gauge" viewBox="0 0 92 92" aria-hidden="true">
+                <circle class="g-track" cx="46" cy="46" r="38"/>
+                <circle id="g-fill" class="g-fill ring-safe" cx="46" cy="46" r="38"
+                        stroke-dasharray="238.8" stroke-dashoffset="238.8"/>
+              </svg>
+              <div class="g-center">
+                <span id="g-num" class="g-num">0</span>
+                <span class="g-max">/ 100</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deception -->
+          <div id="dec-panel" class="dec-panel hidden" role="alert">
+            <div class="dec-bar">
+              <span class="dec-bar-ico">🚨</span>
+              <span class="dec-bar-ttl">PAYMENT DECEPTION DETECTED</span>
+            </div>
+            <div class="dec-cmp">
+              <div class="cmp-col cmp-msg">
+                <div class="cmp-lbl">💬 What you were told</div>
+                <div class="cmp-int" id="d-msg-int"></div>
+                <div class="cmp-amt" id="d-msg-amt"></div>
+                <div class="cmp-raw" id="d-msg-raw"></div>
+              </div>
+              <div class="cmp-vs">VS</div>
+              <div class="cmp-col cmp-qr">
+                <div class="cmp-lbl">📱 What the QR does</div>
+                <div class="cmp-int" id="d-qr-act"></div>
+                <div class="cmp-amt" id="d-qr-amt"></div>
+                <div class="cmp-vpa" id="d-qr-vpa"></div>
+              </div>
+            </div>
+            <div class="dec-badges" id="d-types"></div>
+            <div class="dec-summary" id="d-summary"></div>
+          </div>
+
+          <!-- Sub-scores -->
+          <div class="sec"><div class="sec-h">Risk Breakdown</div><div class="ss-grid" id="ss-grid"></div></div>
+
+          <!-- Explanation -->
+          <div class="sec"><div class="exp-box"><div class="sec-h">Explanation</div><p id="exp-txt" class="exp-txt"></p></div></div>
+
+          <!-- Recommendations -->
+          <div class="sec hidden" id="recs-sec"><div class="recs-box"><div class="sec-h">🔒 Recommendations</div><ul id="recs-list" class="recs-list"></ul></div></div>
+
+          <!-- Findings -->
+          <div class="sec">
+            <div class="fhdr">
+              <div class="sec-h" style="margin:0">Findings</div>
+              <button id="toggle-f" class="link-btn">Show all</button>
+            </div>
+            <div id="f-top" class="fcol"></div>
+            <div id="f-all" class="fcol hidden"></div>
+          </div>
+
+          <!-- Payload details -->
+          <div class="sec"><div class="sec-h">Payload Details</div><div id="pay-det" class="det-grid"></div></div>
+
+          <!-- Redirect chain -->
+          <div class="sec hidden" id="redir-sec"><div class="sec-h">Redirect Chain</div><ol id="redir-ol" class="redir-ol"></ol></div>
+
+          <!-- Raw JSON -->
+          <details class="raw-det"><summary class="link-btn">View raw JSON response</summary><pre id="raw-json" class="raw-pre"></pre></details>
+
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- STATISTICS VIEW -->
+  <div id="view-stats" class="view">
+    <div class="topbar"><div class="tb-title"><h1>Statistics</h1><p>Session scan overview</p></div></div>
+    <div class="card"><div class="card-body">
+      <div class="ov-grid">
+        <div class="ov-card"><span class="ov-val" style="color:var(--safe)" id="ov-safe">0</span><span class="ov-lbl">Safe</span><div class="ov-bar-bg"><div class="ov-bar bar-green" id="bar-safe"></div></div></div>
+        <div class="ov-card"><span class="ov-val" style="color:var(--warn)" id="ov-sus">0</span><span class="ov-lbl">Suspicious</span><div class="ov-bar-bg"><div class="ov-bar bar-yellow" id="bar-sus"></div></div></div>
+        <div class="ov-card"><span class="ov-val" style="color:var(--high)" id="ov-high">0</span><span class="ov-lbl">High Risk</span><div class="ov-bar-bg"><div class="ov-bar bar-orange" id="bar-high"></div></div></div>
+        <div class="ov-card"><span class="ov-val" style="color:var(--crit)" id="ov-crit">0</span><span class="ov-lbl">Critical</span><div class="ov-bar-bg"><div class="ov-bar bar-red" id="bar-crit"></div></div></div>
+      </div>
+      <div style="margin-top:18px"><div class="sec-h">Average Risk Score</div><div class="avg-bg"><div class="avg-fill" id="avg-fill"></div><span class="avg-txt" id="avg-txt">0 / 100</span></div></div>
+    </div></div>
+  </div>
+
+  <!-- HISTORY VIEW -->
+  <div id="view-history" class="view">
+    <div class="topbar"><div class="tb-title"><h1>Scan History</h1><p>All scans this session</p></div><button class="btn-ghost" id="clr-hist">Clear History</button></div>
+    <div class="card"><div class="card-body"><div id="hist-list" class="hist-list"><p class="hist-empty">No scans yet — analyze a QR code to see it here.</p></div></div></div>
+  </div>
+
+  <!-- ABOUT VIEW -->
+  <div id="view-about" class="view">
+    <div class="topbar"><div class="tb-title"><h1>About QRShield</h1><p>Context-Aware QR Payment Fraud Detection Framework</p></div></div>
+    <div class="card">
+      <div class="about-body">
+        <p class="about-p">QRShield is a rule-based heuristic analysis framework that inspects QR codes for payment fraud and deception. Five independent modules — payload parsing, URL intelligence, context analysis, NLP deception detection, and risk scoring — produce a transparent, explainable risk score with actionable recommendations.</p>
+        <div class="mod-grid">
+          <div class="mod-card"><span class="mod-ico">📷</span><div><strong>QR Decoder</strong><p>pyzbar primary + OpenCV adaptive-threshold fallback</p></div></div>
+          <div class="mod-card"><span class="mod-ico">📦</span><div><strong>Payload Parser</strong><p>UPI, HTTPS, deep-links, vCard, WiFi, Geo, plain text</p></div></div>
+          <div class="mod-card"><span class="mod-ico">🌐</span><div><strong>URL Analyzer</strong><p>Scheme, homoglyphs, redirect chain, DNS, Safe Browsing, VirusTotal</p></div></div>
+          <div class="mod-card"><span class="mod-ico">🕐</span><div><strong>Context Engine</strong><p>Temporal, geo, device, network, velocity, VPN/Tor detection</p></div></div>
+          <div class="mod-card"><span class="mod-ico">💬</span><div><strong>Deception Detector</strong><p>NLP intent extraction, pay/receive mismatch, urgency, authority spoofing</p></div></div>
+          <div class="mod-card"><span class="mod-ico">🎯</span><div><strong>Risk Engine</strong><p>Aggregates all signals into a 0-100 score + verdict + recommendations</p></div></div>
+        </div>
+        <div class="about-ft">
+          <span>Rule-based · No ML · Fully transparent · v1.0.0</span>
+          <a href="/docs" target="_blank" rel="noopener" class="btn-ghost">View API Docs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="dash-ft">QRShield v1.0.0 &nbsp;·&nbsp; Heuristic + NLP + Context analysis &nbsp;·&nbsp; No data stored</footer>
+
+</div>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

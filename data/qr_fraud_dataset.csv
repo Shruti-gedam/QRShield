@@ -1,0 +1,681 @@
+scenario_category,label,label_name,qr_payload,message,qr_format,upi_vpa,upi_amount,upi_currency,url_scheme,url_has_ip,url_tld_risky,url_has_shortener,url_length,url_redirect_params,payload_length,has_suspicious_keywords,amount_is_zero,amount_is_negative,amount_is_high,message_intent,message_amount,has_urgency,has_authority_claim,intent_qr_mismatch,amount_mismatch
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Govt&am=9492.42&cu=INR,Government initiative: claim your subsidy of ₹9492.42 by scanning QR.,upi,hacker@phonepe,9492.42,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,9492.42,0,1,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Urgent&am=4993.08&cu=INR,Limited time offer: scan now to receive ₹4993.08 cashback.,upi,scammer@paytm,4993.08,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,4993.08,1,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=BookMyShow&am=1265.47&cu=INR,,upi,hotel@ibl,1265.47,INR,,0,0,0,0,0,54,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Verify&am=229.47&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,fraud@upi,229.47,INR,,0,0,0,0,0,49,1,0,0,0,VERIFY,,1,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=36504.67&cu=INR,Bank refund ₹36504.67 on hold. Scan to release to your account.,upi,thief@okaxis,36504.67,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,36504.67,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=Reliance%20Fresh&am=1006.57&cu=INR,,upi,clinic@axl,1006.57,INR,,0,0,0,0,0,61,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,0,LEGITIMATE,bhim://pay?pa=school@upi&am=747.34&cu=INR,Pay ₹747.34 via bhim.,deep_link,school@upi,747.34,INR,,0,0,0,0,0,41,0,0,0,0,PAY,747.34,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Payment&am=10515.55&cu=INR,Pay ₹53.48 for your subscription renewal.,upi,bank_alert@upi,10515.55,INR,,0,0,0,0,0,57,0,0,0,0,PAY,53.48,0,0,0,1
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=helpdesk9@ybl&pn=Verify&am=0&cu=INR,Scan to verify your account.,upi,helpdesk9@ybl,0,INR,,0,0,0,0,0,48,1,1,0,0,VERIFY,,0,0,0,0
+malicious_url,2,FRAUDULENT,https://paytm-refund.top/claim,Claim your reward now.,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Urgent&am=718.34&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,fraud@upi,718.34,INR,,0,0,0,0,0,49,1,0,0,0,RECEIVE,718.34,1,0,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Zomato&am=1639.98&cu=INR,Pay ₹1639.98 to Zomato.,upi,scammer@paytm,1639.98,INR,,0,0,0,0,0,54,0,0,0,0,PAY,1639.98,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹1319.29 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,1319.29,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Govt&am=5261.85&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,fraud@upi,5261.85,INR,,0,0,0,0,0,48,1,0,0,0,RECEIVE,5261.85,0,1,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=helpdesk9@ybl&pn=Flipkart&am=180.53&cu=INR,,upi,helpdesk9@ybl,180.53,INR,,0,0,0,0,0,55,1,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Urgent&am=1631.37&cu=INR,Account will be blocked in 24 hours. Scan QR immediately to verify.,upi,prize_winner@paytm,1631.37,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,1631.37,1,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Refund&am=14151.38&cu=INR,Refund of ₹14151.38 ready. Urgent: scan before it expires.,upi,bank_alert@upi,14151.38,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,14151.38,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=34779.19&cu=INR,E-commerce refund ₹34779.19 pending. Scan QR immediately.,upi,urgentpay@upi,34779.19,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,34779.19,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Urgent&am=1458.65&cu=INR,Last chance! Scan QR now to claim ₹1458.65 before it expires.,upi,attacker@ybl,1458.65,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,1458.65,1,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Govt&am=5078.6&cu=INR,Ministry of Finance: approved UPI refund ₹5078.6. Scan to collect.,upi,scammer@paytm,5078.6,INR,,0,0,0,0,0,51,1,0,0,0,RECEIVE,5078.6,0,1,1,0
+malicious_url,2,FRAUDULENT,http://10.0.0.1/checkout,Scan to complete your payment.,url,,,INR,http,1,0,0,24,0,24,1,0,0,0,RECEIVE,,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=kyc_verify@phonepe&pn=Dominos%20Pizza&am=4999.89&cu=INR,Scan to pay ₹4999.89 at Dominos Pizza.,upi,kyc_verify@phonepe,4999.89,INR,,0,0,0,0,0,68,1,0,0,0,PAY,4999.89,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=2599.35&cu=INR,Income tax refund ₹2599.35 approved. Scan QR to collect.,upi,thief@okaxis,2599.35,INR,,0,0,0,0,0,53,1,0,0,0,REFUND,2599.35,0,0,1,0
+deep_link_payment,1,SUSPICIOUS,paytm://pay?pa=tax_refund@ybl&am=4325.72&cu=INR,Pay ₹4325.72 via paytm.,deep_link,tax_refund@ybl,4325.72,INR,,0,0,0,0,0,47,1,0,0,0,PAY,4325.72,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Govt&am=19987.78&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,hacker@phonepe,19987.78,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,19987.78,0,1,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Reliance%20Fresh&am=798.05&cu=INR,,upi,salon@kotak,798.05,INR,,0,0,0,0,0,61,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Verify&am=780.96&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,bank_support@upi,780.96,INR,,0,0,0,0,0,56,1,0,0,0,VERIFY,,1,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=govtrefund@upi&pn=Refund&am=1953.42&cu=INR,Congratulations! You have won ₹1953.42. Scan to claim.,upi,govtrefund@upi,1953.42,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,1953.42,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=verify_now@ybl&pn=Dominos%20Pizza&am=602.69&cu=INR,,upi,verify_now@ybl,602.69,INR,,0,0,0,0,0,63,1,0,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Govt&am=7490.04&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,thief@okaxis,7490.04,INR,,0,0,0,0,0,51,1,0,0,0,RECEIVE,7490.04,0,1,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Big%20Bazaar&am=1924.99&cu=INR,Pay ₹1924.99 to Big Bazaar.,upi,hacker@phonepe,1924.99,INR,,0,0,0,0,0,61,0,0,0,0,PAY,1924.99,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=BookMyShow&am=1531.92&cu=INR,Please pay ₹1531.92 for your purchase at BookMyShow.,upi,merchant@okicici,1531.92,INR,,0,0,0,0,0,61,0,0,0,0,PAY,1531.92,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=Zomato&am=2780.82&cu=INR,,upi,hotel@ibl,2780.82,INR,,0,0,0,0,0,50,0,0,0,0,NONE,,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=bank_alert@upi&pn=Verify&am=0&cu=INR,,upi,bank_alert@upi,0,INR,,0,0,0,0,0,49,1,1,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Refund&am=7615.73&cu=INR,Scan this QR to receive ₹7615.73 refund.,upi,attacker@ybl,7615.73,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,7615.73,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=reward_claim@paytm&pn=Refund&am=7601.4&cu=INR,Refund processed: ₹7601.4. Scan QR to get money.,upi,reward_claim@paytm,7601.4,INR,,0,0,0,0,0,58,1,0,0,0,RECEIVE,7601.4,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Dominos%20Pizza&am=1723.52&cu=INR,,upi,school@upi,1723.52,INR,,0,0,0,0,0,60,0,0,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Govt&am=13270.98&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,collect_now@ybl,13270.98,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,13270.98,0,1,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=govtrefund@upi&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,govtrefund@upi,0,INR,,0,0,0,0,0,49,1,1,0,0,VERIFY,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=kyc_verify@phonepe&pn=Flipkart&am=3691.41&cu=INR,Please pay ₹3691.41 for your purchase at Flipkart.,upi,kyc_verify@phonepe,3691.41,INR,,0,0,0,0,0,61,1,0,0,0,PAY,3691.41,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Cafe%20Coffee%20Day&am=1048.18&cu=INR,Pay ₹1048.18 to Cafe Coffee Day.,upi,fraud@upi,1048.18,INR,,0,0,0,0,0,63,0,0,0,0,PAY,1048.18,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Refund&am=6255.98&cu=INR,Your refund of ₹6255.98 is ready. Scan to receive.,upi,fake_merchant@upi,6255.98,INR,,0,0,0,0,0,58,1,0,0,0,RECEIVE,6255.98,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=shop@okhdfcbank&pn=Apollo%20Pharmacy&am=383.63&cu=INR,Pay ₹383.63 to Apollo Pharmacy for your order.,upi,shop@okhdfcbank,383.63,INR,,0,0,0,0,0,66,0,0,0,0,PAY,383.63,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Payment&am=3365.86&cu=INR,Pay ₹249.4 for your subscription renewal.,upi,tax_refund@ybl,3365.86,INR,,0,0,0,0,0,56,1,0,0,0,PAY,249.4,0,0,0,1
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=tax_refund@ybl&pn=Dominos%20Pizza&am=3543.87&cu=INR,,upi,tax_refund@ybl,3543.87,INR,,0,0,0,0,0,64,1,0,0,0,NONE,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=shop@okhdfcbank&pn=Reliance%20Fresh&am=1432.91&cu=INR,,upi,shop@okhdfcbank,1432.91,INR,,0,0,0,0,0,66,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Verify&am=662.26&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,bank_alert@upi,662.26,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=verify_now@ybl&pn=Verify&am=239.82&cu=INR,RBI has mandated KYC update. Scan QR urgently to verify.,upi,verify_now@ybl,239.82,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Payment&am=17423.31&cu=INR,Pay ₹230.35 for your subscription renewal.,upi,thief@okaxis,17423.31,INR,,0,0,0,0,0,55,0,0,0,0,PAY,230.35,0,0,0,1
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=35286.95&cu=INR,Income tax refund ₹35286.95 approved. Scan QR to collect.,upi,thief@okaxis,35286.95,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,35286.95,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=Flipkart&am=1654.57&cu=INR,Pay ₹1654.57 to Flipkart for your order.,upi,merchant@okicici,1654.57,INR,,0,0,0,0,0,59,0,0,0,0,PAY,1654.57,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=reward_claim@paytm&pn=Refund&am=1265.49&cu=INR,Congratulations! You have won ₹1265.49. Scan to claim.,upi,reward_claim@paytm,1265.49,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,1265.49,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Urgent&am=585.97&cu=INR,URGENT: scan within 1 hour or lose your ₹585.97 refund forever.,upi,prize_winner@paytm,585.97,INR,,0,0,0,0,0,58,1,0,0,0,RECEIVE,585.97,1,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=reward_claim@paytm&pn=Verify&am=36.83&cu=INR,Complete your KYC by scanning this QR. Account will be blocked otherwise.,upi,reward_claim@paytm,36.83,INR,,0,0,0,0,0,57,1,0,0,0,VERIFY,,1,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Refund&am=6454.11&cu=INR,Receive ₹6454.11 in your account. Scan QR now.,upi,bank_support@upi,6454.11,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,6454.11,0,0,1,0
+deep_link_payment,1,SUSPICIOUS,paytm://pay?pa=verify_now@ybl&am=3225.2&cu=INR,,deep_link,verify_now@ybl,3225.2,INR,,0,0,0,0,0,46,1,0,0,0,NONE,,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://checkout.billdesk.com/pay,Pay ₹1533.69 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,1533.69,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Govt&am=18300.17&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,urgentpay@upi,18300.17,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,18300.17,0,1,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Cafe%20Coffee%20Day&am=1153.69&cu=INR,,upi,school@upi,1153.69,INR,,0,0,0,0,0,64,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Cafe%20Coffee%20Day&am=4034.98&cu=INR,,upi,school@upi,4034.98,INR,,0,0,0,0,0,64,0,0,0,0,NONE,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=refund123@ybl&pn=Apollo%20Pharmacy&am=2042.62&cu=INR,Your order total is ₹2042.62. Scan to complete payment.,upi,refund123@ybl,2042.62,INR,,0,0,0,0,0,65,1,0,0,0,PAY,2042.62,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Refund&am=775.74&cu=INR,₹775.74 is being sent to you. Scan to accept.,upi,bank_support@upi,775.74,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,775.74,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Govt&am=19920.58&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹19920.58.,upi,thief@okaxis,19920.58,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,19920.58,0,1,1,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹1859.32 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,1859.32,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=shop@okhdfcbank&pn=Flipkart&am=455.82&cu=INR,,upi,shop@okhdfcbank,455.82,INR,,0,0,0,0,0,57,0,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Urgent&am=1678.35&cu=INR,Last chance! Scan QR now to claim ₹1678.35 before it expires.,upi,fraud@upi,1678.35,INR,,0,0,0,0,0,50,1,0,0,0,RECEIVE,1678.35,1,0,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=McDonald's&am=827.42&cu=INR,Pay ₹827.42 to McDonald's.,upi,fake_merchant@upi,827.42,INR,,0,0,0,0,0,61,0,0,0,0,PAY,827.42,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Refund&am=7123.33&cu=INR,Receive ₹7123.33 in your account. Scan QR now.,upi,hacker@phonepe,7123.33,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,7123.33,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Refund&am=14441.26&cu=INR,Your refund of ₹14441.26 has been initiated. Scan to receive.,upi,fraud@upi,14441.26,INR,,0,0,0,0,0,51,1,0,0,1,REFUND,14441.26,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=petrol@oksbi&pn=Reliance%20Fresh&am=2138.31&cu=INR,Bill amount: ₹2138.31. Scan to pay Reliance Fresh.,upi,petrol@oksbi,2138.31,INR,,0,0,0,0,0,63,0,0,0,0,PAY,2138.31,0,0,0,0
+malicious_url,2,FRAUDULENT,http://secure-upi.xyz/login,,url,,,INR,http,0,0,0,27,0,27,1,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=McDonald's&am=4410.28&cu=INR,Payment of ₹4410.28 to McDonald's.,upi,cafe@ybl,4410.28,INR,,0,0,0,0,0,53,0,0,0,0,PAY,4410.28,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=refund123@ybl&pn=Payment&am=13467.5&cu=INR,Pay ₹177.46 for your subscription renewal.,upi,refund123@ybl,13467.5,INR,,0,0,0,0,0,55,1,0,0,0,PAY,177.46,0,0,0,1
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Cafe%20Coffee%20Day&am=1375.25&cu=INR,Pay ₹1375.25 to Cafe Coffee Day.,upi,scammer@paytm,1375.25,INR,,0,0,0,0,0,67,0,0,0,0,PAY,1375.25,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://secure.payu.in/transaction,Pay ₹1907.15 securely via our payment gateway.,url,,,INR,https,0,0,0,34,0,34,0,0,0,0,PAY,1907.15,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Verify&am=81.15&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,account_fix@upi,81.15,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Govt&am=1732.73&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,rbi_collect@ybl,1732.73,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,1732.73,0,1,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Payment&am=5487.18&cu=INR,Pay ₹266.99 for your subscription renewal.,upi,collect_now@ybl,5487.18,INR,,0,0,0,0,0,57,0,0,0,0,PAY,266.99,0,0,0,1
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=grocery@okaxis&pn=Reliance%20Fresh&am=257.05&cu=INR,Your order total is ₹257.05. Scan to complete payment.,upi,grocery@okaxis,257.05,INR,,0,0,0,0,0,64,0,0,0,0,PAY,257.05,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=helpdesk9@ybl&pn=BookMyShow&am=3953.42&cu=INR,,upi,helpdesk9@ybl,3953.42,INR,,0,0,0,0,0,58,1,0,0,0,NONE,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Refund&am=30581.97&cu=INR,Your refund of ₹30581.97 has been initiated. Scan to receive.,upi,fake_merchant@upi,30581.97,INR,,0,0,0,0,0,59,1,0,0,1,REFUND,30581.97,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=income_tax@phonepe&pn=Cafe%20Coffee%20Day&am=2744.88&cu=INR,,upi,income_tax@phonepe,2744.88,INR,,0,0,0,0,0,72,1,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=BookMyShow&am=3788.56&cu=INR,Payment of ₹3788.56 to BookMyShow.,upi,clinic@axl,3788.56,INR,,0,0,0,0,0,55,0,0,0,0,PAY,3788.56,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Cafe%20Coffee%20Day&am=3720.67&cu=INR,Payment of ₹3720.67 to Cafe Coffee Day.,upi,store@oksbi,3720.67,INR,,0,0,0,0,0,65,0,0,0,0,PAY,3720.67,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Urgent&am=2968.29&cu=INR,Account will be blocked in 24 hours. Scan QR immediately to verify.,upi,account_fix@upi,2968.29,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,2968.29,1,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Verify&am=634.52&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,prize_winner@paytm,634.52,INR,,0,0,0,0,0,58,1,0,0,0,VERIFY,,1,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=Apollo%20Pharmacy&am=2719.21&cu=INR,,upi,parking@ybl,2719.21,INR,,0,0,0,0,0,63,0,0,0,0,NONE,,0,0,0,0
+malicious_url,2,FRAUDULENT,https://bit.ly/payconfirm,Scan to complete your payment.,url,,,INR,https,0,0,1,25,0,25,1,0,0,0,RECEIVE,,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=rbi_official@ybl&pn=Zomato&am=3423.7&cu=INR,,upi,rbi_official@ybl,3423.7,INR,,0,0,0,0,0,56,1,0,0,0,NONE,,0,0,0,0
+malicious_url,2,FRAUDULENT,http://10.0.0.1/checkout,,url,,,INR,http,1,0,0,24,0,24,1,0,0,0,NONE,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=41283.67&cu=INR,E-commerce refund ₹41283.67 pending. Scan QR immediately.,upi,scammer@paytm,41283.67,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,41283.67,0,0,1,0
+deep_link_payment,1,SUSPICIOUS,bhim://pay?pa=income_tax@phonepe&am=3154.46&cu=INR,,deep_link,income_tax@phonepe,3154.46,INR,,0,0,0,0,0,50,0,0,0,0,NONE,,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=urgentpay@upi&pn=Verify&am=0&cu=INR,,upi,urgentpay@upi,0,INR,,0,0,0,0,0,48,1,1,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Govt&am=3924.98&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,collect_now@ybl,3924.98,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,3924.98,0,1,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=account_fix@upi&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,account_fix@upi,0,INR,,0,0,0,0,0,50,1,1,0,0,VERIFY,,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Big%20Bazaar&am=507.68&cu=INR,Pay ₹507.68 to Big Bazaar.,upi,urgentpay@upi,507.68,INR,,0,0,0,0,0,59,0,0,0,0,PAY,507.68,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Payment&am=12728.26&cu=INR,Pay ₹338.06 for your subscription renewal.,upi,lucky_user@upi,12728.26,INR,,0,0,0,0,0,57,0,0,0,0,PAY,338.06,0,0,0,1
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=verify_now@ybl&pn=Payment&am=13444.26&cu=INR,Pay ₹302.43 for your subscription renewal.,upi,verify_now@ybl,13444.26,INR,,0,0,0,0,0,57,1,0,0,0,PAY,302.43,0,0,0,1
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=rbi_official@ybl&pn=BookMyShow&am=431.63&cu=INR,,upi,rbi_official@ybl,431.63,INR,,0,0,0,0,0,60,1,0,0,0,NONE,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=verify_now@ybl&pn=Zomato&am=4165.83&cu=INR,Scan to pay ₹4165.83 at Zomato.,upi,verify_now@ybl,4165.83,INR,,0,0,0,0,0,55,1,0,0,0,PAY,4165.83,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=refund123@ybl&pn=McDonald's&am=1661.56&cu=INR,Please pay ₹1661.56 for your purchase at McDonald's.,upi,refund123@ybl,1661.56,INR,,0,0,0,0,0,58,1,0,0,0,PAY,1661.56,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Verify&am=630.9&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,urgentpay@upi,630.9,INR,,0,0,0,0,0,52,1,0,0,0,VERIFY,,1,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Govt&am=19012.92&cu=INR,Ministry of Finance: approved UPI refund ₹19012.92. Scan to collect.,upi,rbi_collect@ybl,19012.92,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,19012.92,0,1,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=refund123@ybl&pn=Apollo%20Pharmacy&am=1876.73&cu=INR,Scan to pay ₹1876.73 at Apollo Pharmacy.,upi,refund123@ybl,1876.73,INR,,0,0,0,0,0,65,1,0,0,0,PAY,1876.73,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Payment&am=5564.89&cu=INR,Pay ₹328.03 for your subscription renewal.,upi,thief@okaxis,5564.89,INR,,0,0,0,0,0,54,0,0,0,0,PAY,328.03,0,0,0,1
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=McDonald's&am=3911.58&cu=INR,,upi,store@oksbi,3911.58,INR,,0,0,0,0,0,56,0,0,0,0,NONE,,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Payment&am=8924.84&cu=INR,Pay ₹393.08 for your subscription renewal.,upi,fake_merchant@upi,8924.84,INR,,0,0,0,0,0,59,0,0,0,0,PAY,393.08,0,0,0,1
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Refund&am=8310.68&cu=INR,Bank refund ₹8310.68 on hold. Scan to release to your account.,upi,fraud@upi,8310.68,INR,,0,0,0,0,0,50,1,0,0,0,REFUND,8310.68,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Dominos%20Pizza&am=3311.96&cu=INR,Your order total is ₹3311.96. Scan to complete payment.,upi,store@oksbi,3311.96,INR,,0,0,0,0,0,61,0,0,0,0,PAY,3311.96,0,0,0,0
+malicious_url,2,FRAUDULENT,https://sbi-reward.click/prize,,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=rbi_official@ybl&pn=Urgent&am=656.88&cu=INR,URGENT: scan within 1 hour or lose your ₹656.88 refund forever.,upi,rbi_official@ybl,656.88,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,656.88,1,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Govt&am=2394.7&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹2394.7.,upi,rbi_collect@ybl,2394.7,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,2394.7,0,1,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=cashback99@upi&pn=Refund&am=9443.97&cu=INR,Your cashback of ₹9443.97 has been approved. Scan to collect.,upi,cashback99@upi,9443.97,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,9443.97,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=pharmacy@paytm&pn=Flipkart&am=978.68&cu=INR,,upi,pharmacy@paytm,978.68,INR,,0,0,0,0,0,56,0,0,0,0,NONE,,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Payment&am=21926.28&cu=INR,Pay ₹399.58 for your subscription renewal.,upi,bank_alert@upi,21926.28,INR,,0,0,0,0,0,57,0,0,0,0,PAY,399.58,0,0,0,1
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=helpdesk9@ybl&pn=Verify&am=0&cu=INR,Scan to verify your account.,upi,helpdesk9@ybl,0,INR,,0,0,0,0,0,48,1,1,0,0,VERIFY,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=McDonald's&am=3867.04&cu=INR,Bill amount: ₹3867.04. Scan to pay McDonald's.,upi,merchant@okicici,3867.04,INR,,0,0,0,0,0,61,0,0,0,0,PAY,3867.04,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Payment&am=18290.49&cu=INR,Pay ₹447.5 for your subscription renewal.,upi,lucky_user@upi,18290.49,INR,,0,0,0,0,0,57,0,0,0,0,PAY,447.5,0,0,0,1
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=income_tax@phonepe&pn=Payment&am=13489.0&cu=INR,Pay ₹108.13 for your subscription renewal.,upi,income_tax@phonepe,13489.0,INR,,0,0,0,0,0,60,0,0,0,0,PAY,108.13,0,0,0,1
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹822.68 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,822.68,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Govt&am=13716.41&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,thief@okaxis,13716.41,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,13716.41,0,1,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Refund&am=8431.65&cu=INR,Your reward of ₹8431.65 is pending. Scan to receive.,upi,instant_win@paytm,8431.65,INR,,0,0,0,0,0,58,1,0,0,0,RECEIVE,8431.65,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Verify&am=318.54&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,scammer@paytm,318.54,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Urgent&am=2747.06&cu=INR,Last chance! Scan QR now to claim ₹2747.06 before it expires.,upi,thief@okaxis,2747.06,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,2747.06,1,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Refund&am=11602.85&cu=INR,E-commerce refund ₹11602.85 pending. Scan QR immediately.,upi,hacker@phonepe,11602.85,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,11602.85,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=Big%20Bazaar&am=1444.69&cu=INR,Payment of ₹1444.69 to Big Bazaar.,upi,cafe@ybl,1444.69,INR,,0,0,0,0,0,55,0,0,0,0,PAY,1444.69,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=govtrefund@upi&pn=Urgent&am=4557.53&cu=INR,URGENT: scan within 1 hour or lose your ₹4557.53 refund forever.,upi,govtrefund@upi,4557.53,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,4557.53,1,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=helpdesk9@ybl&pn=Refund&am=8242.56&cu=INR,Refund processed: ₹8242.56. Scan QR to get money.,upi,helpdesk9@ybl,8242.56,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,8242.56,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=45516.71&cu=INR,Income tax refund ₹45516.71 approved. Scan QR to collect.,upi,urgentpay@upi,45516.71,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,45516.71,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=9816.86&cu=INR,Refund processed: ₹9816.86. Scan QR to get money.,upi,thief@okaxis,9816.86,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,9816.86,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=Reliance%20Fresh&am=3970.79&cu=INR,,upi,cafe@ybl,3970.79,INR,,0,0,0,0,0,59,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=Big%20Bazaar&am=2294.38&cu=INR,Your order total is ₹2294.38. Scan to complete payment.,upi,laundry@okhdfcbank,2294.38,INR,,0,0,0,0,0,65,0,0,0,0,PAY,2294.38,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=Zomato&am=1826.01&cu=INR,,upi,hotel@ibl,1826.01,INR,,0,0,0,0,0,50,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,phonepe://pay?pa=verify_now@ybl&am=4333.27&cu=INR,Pay ₹4333.27 via phonepe.,deep_link,verify_now@ybl,4333.27,INR,,0,0,0,0,0,49,1,0,0,0,PAY,4333.27,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Govt&am=12581.16&cu=INR,Ministry of Finance: approved UPI refund ₹12581.16. Scan to collect.,upi,attacker@ybl,12581.16,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,12581.16,0,1,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Govt&am=10285.0&cu=INR,Government initiative: claim your subsidy of ₹10285.0 by scanning QR.,upi,instant_win@paytm,10285.0,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,10285.0,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=shop@okhdfcbank&pn=Dominos%20Pizza&am=3003.03&cu=INR,Your order total is ₹3003.03. Scan to complete payment.,upi,shop@okhdfcbank,3003.03,INR,,0,0,0,0,0,65,0,0,0,0,PAY,3003.03,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Verify&am=979.81&cu=INR,RBI has mandated KYC update. Scan QR urgently to verify.,upi,collect_now@ybl,979.81,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Swiggy&am=3050.73&cu=INR,,upi,salon@kotak,3050.73,INR,,0,0,0,0,0,52,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=support_team@upi&pn=Refund&am=5093.23&cu=INR,Claim your prize money ₹5093.23 by scanning this QR.,upi,support_team@upi,5093.23,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,5093.23,0,0,1,0
+malicious_url,2,FRAUDULENT,https://tinyurl.com/refund5000,Verify your account by scanning.,url,,,INR,https,0,0,1,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,Scan to complete your payment.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=instant_win@paytm&pn=Verify&am=0&cu=INR,,upi,instant_win@paytm,0,INR,,0,0,0,0,0,52,1,1,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Govt&am=9632.46&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹9632.46.,upi,scammer@paytm,9632.46,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,9632.46,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=Zomato&am=4089.32&cu=INR,,upi,restaurant@okaxis,4089.32,INR,,0,0,0,0,0,58,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,gpay://pay?pa=lucky_user@upi&am=4940.72&cu=INR,,deep_link,lucky_user@upi,4940.72,INR,,0,0,0,0,0,46,0,0,0,0,NONE,,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Reliance%20Fresh&am=371.28&cu=INR,Pay ₹371.28 to Reliance Fresh.,upi,attacker@ybl,371.28,INR,,0,0,0,0,0,62,0,0,0,0,PAY,371.28,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=McDonald's&am=1593.9&cu=INR,,upi,laundry@okhdfcbank,1593.9,INR,,0,0,0,0,0,62,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,gpay://pay?pa=verify_now@ybl&am=4707.48&cu=INR,,deep_link,verify_now@ybl,4707.48,INR,,0,0,0,0,0,46,1,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Refund&am=6934.8&cu=INR,Claim your prize money ₹6934.8 by scanning this QR.,upi,lucky_user@upi,6934.8,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,6934.8,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Refund&am=43554.6&cu=INR,E-commerce refund ₹43554.6 pending. Scan QR immediately.,upi,rbi_collect@ybl,43554.6,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,43554.6,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹1423.74 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,1423.74,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=30303.8&cu=INR,E-commerce refund ₹30303.8 pending. Scan QR immediately.,upi,scammer@paytm,30303.8,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,30303.8,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Urgent&am=2296.55&cu=INR,Account will be blocked in 24 hours. Scan QR immediately to verify.,upi,bank_support@upi,2296.55,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,2296.55,1,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Payment&am=18200.89&cu=INR,Pay ₹287.12 for your subscription renewal.,upi,tax_refund@ybl,18200.89,INR,,0,0,0,0,0,57,1,0,0,0,PAY,287.12,0,0,0,1
+malicious_url,2,FRAUDULENT,http://icici-verify.ga/account,Verify your account by scanning.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=pharmacy@paytm&pn=McDonald's&am=1532.44&cu=INR,,upi,pharmacy@paytm,1532.44,INR,,0,0,0,0,0,59,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Refund&am=2962.32&cu=INR,Your cashback of ₹2962.32 has been approved. Scan to collect.,upi,kyc_verify@phonepe,2962.32,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,2962.32,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=petrol@oksbi&pn=BookMyShow&am=534.65&cu=INR,,upi,petrol@oksbi,534.65,INR,,0,0,0,0,0,56,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=Big%20Bazaar&am=4636.26&cu=INR,,upi,laundry@okhdfcbank,4636.26,INR,,0,0,0,0,0,65,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=BookMyShow&am=1501.23&cu=INR,Your order total is ₹1501.23. Scan to complete payment.,upi,restaurant@okaxis,1501.23,INR,,0,0,0,0,0,62,0,0,0,0,PAY,1501.23,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=34681.86&cu=INR,Income tax refund ₹34681.86 approved. Scan QR to collect.,upi,scammer@paytm,34681.86,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,34681.86,0,0,1,0
+malicious_url,2,FRAUDULENT,http://icici-verify.ga/account,,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Refund&am=6124.93&cu=INR,Your cashback of ₹6124.93 has been approved. Scan to collect.,upi,fraud@upi,6124.93,INR,,0,0,0,0,0,50,1,0,0,0,RECEIVE,6124.93,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=shop@okhdfcbank&pn=McDonald's&am=2933.42&cu=INR,Scan to pay ₹2933.42 at McDonald's.,upi,shop@okhdfcbank,2933.42,INR,,0,0,0,0,0,60,0,0,0,0,PAY,2933.42,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=refund123@ybl&pn=Cafe%20Coffee%20Day&am=2013.22&cu=INR,,upi,refund123@ybl,2013.22,INR,,0,0,0,0,0,67,1,0,0,0,NONE,,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹170.83 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,170.83,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=Big%20Bazaar&am=741.17&cu=INR,,upi,cafe@ybl,741.17,INR,,0,0,0,0,0,54,0,0,0,0,NONE,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=Apollo%20Pharmacy&am=1212.88&cu=INR,,upi,cafe@ybl,1212.88,INR,,0,0,0,0,0,60,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=income_tax@phonepe&pn=Verify&am=878.57&cu=INR,Complete your KYC by scanning this QR. Account will be blocked otherwise.,upi,income_tax@phonepe,878.57,INR,,0,0,0,0,0,58,1,0,0,0,VERIFY,,1,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=McDonald's&am=760.11&cu=INR,Pay ₹760.11 to McDonald's.,upi,rbi_collect@ybl,760.11,INR,,0,0,0,0,0,59,0,0,0,0,PAY,760.11,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Dominos%20Pizza&am=1244.66&cu=INR,Pay ₹1244.66 to Dominos Pizza.,upi,collect_now@ybl,1244.66,INR,,0,0,0,0,0,65,0,0,0,0,PAY,1244.66,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Urgent&am=436.19&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,collect_now@ybl,436.19,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,436.19,1,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=bakery@okicici&pn=Cafe%20Coffee%20Day&am=813.15&cu=INR,,upi,bakery@okicici,813.15,INR,,0,0,0,0,0,67,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Verify&am=746.27&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,urgentpay@upi,746.27,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Verify&am=525.9&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,hacker@phonepe,525.9,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Verify&am=94.02&cu=INR,Complete your KYC by scanning this QR. Account will be blocked otherwise.,upi,prize_winner@paytm,94.02,INR,,0,0,0,0,0,57,1,0,0,0,VERIFY,,1,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=Flipkart&am=959.69&cu=INR,,upi,merchant@okicici,959.69,INR,,0,0,0,0,0,58,0,0,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Govt&am=1384.26&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹1384.26.,upi,fraud@upi,1384.26,INR,,0,0,0,0,0,48,1,0,0,0,RECEIVE,1384.26,0,1,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Swiggy&am=1410.55&cu=INR,Pay ₹1410.55 to Swiggy.,upi,fraud@upi,1410.55,INR,,0,0,0,0,0,50,0,0,0,0,PAY,1410.55,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Refund&am=6798.5&cu=INR,Your refund of ₹6798.5 is ready. Scan to receive.,upi,lucky_user@upi,6798.5,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,6798.5,0,0,1,0
+malicious_url,2,FRAUDULENT,http://secure-upi.xyz/login,Scan to complete your payment.,url,,,INR,http,0,0,0,27,0,27,1,0,0,0,RECEIVE,,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=refund123@ybl&pn=Refund&am=2630.11&cu=INR,Your refund of ₹2630.11 is ready. Scan to receive.,upi,refund123@ybl,2630.11,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,2630.11,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=BookMyShow&am=924.84&cu=INR,,upi,parking@ybl,924.84,INR,,0,0,0,0,0,55,0,0,0,0,NONE,,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Payment&am=11153.31&cu=INR,Pay ₹300.32 for your subscription renewal.,upi,hacker@phonepe,11153.31,INR,,0,0,0,0,0,57,0,0,0,0,PAY,300.32,0,0,0,1
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=income_tax@phonepe&pn=Cafe%20Coffee%20Day&am=3062.85&cu=INR,Bill amount: ₹3062.85. Scan to pay Cafe Coffee Day.,upi,income_tax@phonepe,3062.85,INR,,0,0,0,0,0,72,1,0,0,0,PAY,3062.85,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Cafe%20Coffee%20Day&am=298.2&cu=INR,,upi,salon@kotak,298.2,INR,,0,0,0,0,0,63,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=cashback99@upi&pn=Verify&am=455.43&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,cashback99@upi,455.43,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Payment&am=24379.81&cu=INR,Pay ₹82.43 for your subscription renewal.,upi,tax_refund@ybl,24379.81,INR,,0,0,0,0,0,57,1,0,0,0,PAY,82.43,0,0,0,1
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹1607.77 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,1607.77,0,0,0,0
+deep_link_payment,0,LEGITIMATE,gpay://pay?pa=school@upi&am=2359.04&cu=INR,,deep_link,school@upi,2359.04,INR,,0,0,0,0,0,42,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Verify&am=167.03&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,kyc_verify@phonepe,167.03,INR,,0,0,0,0,0,58,1,0,0,0,VERIFY,,1,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹651.23 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,651.23,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Govt&am=19569.92&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,attacker@ybl,19569.92,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,19569.92,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=grocery@okaxis&pn=Apollo%20Pharmacy&am=1370.69&cu=INR,Please pay ₹1370.69 for your purchase at Apollo Pharmacy.,upi,grocery@okaxis,1370.69,INR,,0,0,0,0,0,66,0,0,0,0,PAY,1370.69,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=Dominos%20Pizza&am=2995.42&cu=INR,Payment of ₹2995.42 to Dominos Pizza.,upi,hotel@ibl,2995.42,INR,,0,0,0,0,0,59,0,0,0,0,PAY,2995.42,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=bank_support@upi&pn=BookMyShow&am=1156.71&cu=INR,Scan to pay ₹1156.71 at BookMyShow.,upi,bank_support@upi,1156.71,INR,,0,0,0,0,0,61,1,0,0,0,PAY,1156.71,0,0,0,0
+malicious_url,2,FRAUDULENT,https://sbi-reward.click/prize,Scan to complete your payment.,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=grocery@okaxis&pn=Swiggy&am=2361.77&cu=INR,Pay ₹2361.77 to Swiggy for your order.,upi,grocery@okaxis,2361.77,INR,,0,0,0,0,0,55,0,0,0,0,PAY,2361.77,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=shop@okhdfcbank&pn=Flipkart&am=3691.9&cu=INR,Pay ₹3691.9 to Flipkart for your order.,upi,shop@okhdfcbank,3691.9,INR,,0,0,0,0,0,57,0,0,0,0,PAY,3691.9,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=bank_support@upi&pn=Reliance%20Fresh&am=4841.71&cu=INR,,upi,bank_support@upi,4841.71,INR,,0,0,0,0,0,67,1,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Verify&am=921.02&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,collect_now@ybl,921.02,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Govt&am=13160.17&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹13160.17.,upi,thief@okaxis,13160.17,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,13160.17,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=pharmacy@paytm&pn=BookMyShow&am=4310.86&cu=INR,Pay ₹4310.86 to BookMyShow for your order.,upi,pharmacy@paytm,4310.86,INR,,0,0,0,0,0,59,0,0,0,0,PAY,4310.86,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Dominos%20Pizza&am=2595.07&cu=INR,Bill amount: ₹2595.07. Scan to pay Dominos Pizza.,upi,salon@kotak,2595.07,INR,,0,0,0,0,0,61,0,0,0,0,PAY,2595.07,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://checkout.billdesk.com/pay,Pay ₹1045.93 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,1045.93,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=kyc_verify@phonepe&pn=Swiggy&am=3620.87&cu=INR,Bill amount: ₹3620.87. Scan to pay Swiggy.,upi,kyc_verify@phonepe,3620.87,INR,,0,0,0,0,0,59,1,0,0,0,PAY,3620.87,0,0,0,0
+malicious_url,2,FRAUDULENT,https://tinyurl.com/refund5000,,url,,,INR,https,0,0,1,30,0,30,1,0,0,0,NONE,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Refund&am=5195.04&cu=INR,E-commerce refund ₹5195.04 pending. Scan QR immediately.,upi,hacker@phonepe,5195.04,INR,,0,0,0,0,0,55,1,0,0,0,REFUND,5195.04,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹2953.41 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,2953.41,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Dominos%20Pizza&am=723.05&cu=INR,Pay ₹723.05 to Dominos Pizza.,upi,scammer@paytm,723.05,INR,,0,0,0,0,0,62,0,0,0,0,PAY,723.05,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=lucky_user@upi&pn=Cafe%20Coffee%20Day&am=3115.21&cu=INR,Please pay ₹3115.21 for your purchase at Cafe Coffee Day.,upi,lucky_user@upi,3115.21,INR,,0,0,0,0,0,68,1,0,0,0,PAY,3115.21,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Govt&am=13795.11&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,bank_alert@upi,13795.11,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,13795.11,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=Zomato&am=3124.74&cu=INR,Please pay ₹3124.74 for your purchase at Zomato.,upi,merchant@okicici,3124.74,INR,,0,0,0,0,0,57,0,0,0,0,PAY,3124.74,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Dominos%20Pizza&am=361.62&cu=INR,Pay ₹361.62 to Dominos Pizza.,upi,bank_alert@upi,361.62,INR,,0,0,0,0,0,63,0,0,0,0,PAY,361.62,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹2357.42 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,2357.42,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Refund&am=14866.94&cu=INR,Your refund of ₹14866.94 has been initiated. Scan to receive.,upi,bank_alert@upi,14866.94,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,14866.94,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=Apollo%20Pharmacy&am=1201.67&cu=INR,Pay ₹1201.67 to Apollo Pharmacy for your order.,upi,restaurant@okaxis,1201.67,INR,,0,0,0,0,0,69,0,0,0,0,PAY,1201.67,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Refund&am=11340.23&cu=INR,Your refund of ₹11340.23 has been initiated. Scan to receive.,upi,rbi_collect@ybl,11340.23,INR,,0,0,0,0,0,57,1,0,0,1,REFUND,11340.23,0,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Payment&am=17145.45&cu=INR,Pay ₹324.05 for your subscription renewal.,upi,account_fix@upi,17145.45,INR,,0,0,0,0,0,58,0,0,0,0,PAY,324.05,0,0,0,1
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=refund123@ybl&pn=Dominos%20Pizza&am=1268.35&cu=INR,,upi,refund123@ybl,1268.35,INR,,0,0,0,0,0,63,1,0,0,0,NONE,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Refund&am=12753.39&cu=INR,Bank refund ₹12753.39 on hold. Scan to release to your account.,upi,fraud@upi,12753.39,INR,,0,0,0,0,0,51,1,0,0,1,REFUND,12753.39,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=BookMyShow&am=2126.62&cu=INR,,upi,clinic@axl,2126.62,INR,,0,0,0,0,0,55,0,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Urgent&am=3675.1&cu=INR,Account will be blocked in 24 hours. Scan QR immediately to verify.,upi,prize_winner@paytm,3675.1,INR,,0,0,0,0,0,58,1,0,0,0,RECEIVE,3675.1,1,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=rbi_collect@ybl&pn=Verify&am=0&cu=INR,Zero charge verification. Scan QR.,upi,rbi_collect@ybl,0,INR,,0,0,0,0,0,50,1,1,0,0,VERIFY,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Govt&am=8078.59&cu=INR,Government initiative: claim your subsidy of ₹8078.59 by scanning QR.,upi,fraud@upi,8078.59,INR,,0,0,0,0,0,48,1,0,0,0,RECEIVE,8078.59,0,1,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Verify&am=819.91&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,instant_win@paytm,819.91,INR,,0,0,0,0,0,57,1,0,0,0,VERIFY,,1,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Verify&am=623.01&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,rbi_collect@ybl,623.01,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Urgent&am=3347.57&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,fraud@upi,3347.57,INR,,0,0,0,0,0,50,1,0,0,0,RECEIVE,3347.57,1,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Refund&am=7658.01&cu=INR,Claim your prize money ₹7658.01 by scanning this QR.,upi,bank_alert@upi,7658.01,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,7658.01,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=Flipkart&am=3193.14&cu=INR,,upi,restaurant@okaxis,3193.14,INR,,0,0,0,0,0,60,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=bakery@okicici&pn=BookMyShow&am=2028.41&cu=INR,,upi,bakery@okicici,2028.41,INR,,0,0,0,0,0,59,0,0,0,0,NONE,,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹981.24 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,981.24,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹2564.24 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,2564.24,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=Dominos%20Pizza&am=4635.52&cu=INR,Payment of ₹4635.52 to Dominos Pizza.,upi,merchant@okicici,4635.52,INR,,0,0,0,0,0,66,0,0,0,0,PAY,4635.52,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=Flipkart&am=2138.51&cu=INR,Pay ₹2138.51 to Flipkart for your order.,upi,restaurant@okaxis,2138.51,INR,,0,0,0,0,0,60,0,0,0,0,PAY,2138.51,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Flipkart&am=1418.56&cu=INR,Pay ₹1418.56 to Flipkart.,upi,thief@okaxis,1418.56,INR,,0,0,0,0,0,55,0,0,0,0,PAY,1418.56,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Refund&am=7144.92&cu=INR,₹7144.92 is being sent to you. Scan to accept.,upi,kyc_verify@phonepe,7144.92,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,7144.92,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Urgent&am=4154.35&cu=INR,Limited time offer: scan now to receive ₹4154.35 cashback.,upi,rbi_collect@ybl,4154.35,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,4154.35,1,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=gym@phonepe&pn=Swiggy&am=3498.13&cu=INR,,upi,gym@phonepe,3498.13,INR,,0,0,0,0,0,52,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,phonepe://pay?pa=rbi_official@ybl&am=3141.17&cu=INR,,deep_link,rbi_official@ybl,3141.17,INR,,0,0,0,0,0,51,0,0,0,0,NONE,,0,0,0,0
+malicious_url,2,FRAUDULENT,https://paytm-refund.top/claim,Scan to complete your payment.,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+malicious_url,2,FRAUDULENT,http://10.0.0.1/checkout,,url,,,INR,http,1,0,0,24,0,24,1,0,0,0,NONE,,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Payment&am=2946.87&cu=INR,Pay ₹424.3 for your subscription renewal.,upi,bank_support@upi,2946.87,INR,,0,0,0,0,0,58,1,0,0,0,PAY,424.3,0,0,0,1
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=helpdesk9@ybl&pn=Payment&am=2588.68&cu=INR,Pay ₹141.99 for your subscription renewal.,upi,helpdesk9@ybl,2588.68,INR,,0,0,0,0,0,55,0,0,0,0,PAY,141.99,0,0,0,1
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,Claim your reward now.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=gym@phonepe&pn=Dominos%20Pizza&am=4283.82&cu=INR,Please pay ₹4283.82 for your purchase at Dominos Pizza.,upi,gym@phonepe,4283.82,INR,,0,0,0,0,0,61,0,0,0,0,PAY,4283.82,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Refund&am=7731.68&cu=INR,Claim your prize money ₹7731.68 by scanning this QR.,upi,rbi_collect@ybl,7731.68,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,7731.68,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Reliance%20Fresh&am=1950.66&cu=INR,,upi,store@oksbi,1950.66,INR,,0,0,0,0,0,62,0,0,0,0,NONE,,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Swiggy&am=1074.86&cu=INR,Pay ₹1074.86 to Swiggy.,upi,fake_merchant@upi,1074.86,INR,,0,0,0,0,0,58,0,0,0,0,PAY,1074.86,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=pharmacy@paytm&pn=Dominos%20Pizza&am=1094.37&cu=INR,Your order total is ₹1094.37. Scan to complete payment.,upi,pharmacy@paytm,1094.37,INR,,0,0,0,0,0,64,0,0,0,0,PAY,1094.37,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=bank_alert@upi&pn=Verify&am=0&cu=INR,Zero charge verification. Scan QR.,upi,bank_alert@upi,0,INR,,0,0,0,0,0,49,1,1,0,0,VERIFY,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,phonepe://pay?pa=prize_winner@paytm&am=4710.95&cu=INR,Pay ₹4710.95 via phonepe.,deep_link,prize_winner@paytm,4710.95,INR,,0,0,0,0,0,53,0,0,0,0,PAY,4710.95,0,0,0,0
+malicious_url,2,FRAUDULENT,http://10.0.0.1/checkout,,url,,,INR,http,1,0,0,24,0,24,1,0,0,0,NONE,,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹2688.71 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,2688.71,0,0,0,0
+deep_link_payment,0,LEGITIMATE,gpay://pay?pa=parking@ybl&am=1262.15&cu=INR,,deep_link,parking@ybl,1262.15,INR,,0,0,0,0,0,43,0,0,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Govt&am=15057.91&cu=INR,Government initiative: claim your subsidy of ₹15057.91 by scanning QR.,upi,thief@okaxis,15057.91,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,15057.91,0,1,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Verify&am=182.13&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,instant_win@paytm,182.13,INR,,0,0,0,0,0,57,1,0,0,0,VERIFY,,1,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Payment&am=22637.24&cu=INR,Pay ₹146.81 for your subscription renewal.,upi,fraud@upi,22637.24,INR,,0,0,0,0,0,52,0,0,0,0,PAY,146.81,0,0,0,1
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Verify&am=949.88&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,lucky_user@upi,949.88,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Big%20Bazaar&am=1452.44&cu=INR,Pay ₹1452.44 to Big Bazaar.,upi,fraud@upi,1452.44,INR,,0,0,0,0,0,56,0,0,0,0,PAY,1452.44,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=shop@okhdfcbank&pn=McDonald's&am=1089.88&cu=INR,Payment of ₹1089.88 to McDonald's.,upi,shop@okhdfcbank,1089.88,INR,,0,0,0,0,0,60,0,0,0,0,PAY,1089.88,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Payment&am=23253.14&cu=INR,Pay ₹393.87 for your subscription renewal.,upi,collect_now@ybl,23253.14,INR,,0,0,0,0,0,58,0,0,0,0,PAY,393.87,0,0,0,1
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Refund&am=6624.04&cu=INR,Refund of ₹6624.04 ready. Urgent: scan before it expires.,upi,collect_now@ybl,6624.04,INR,,0,0,0,0,0,56,1,0,0,0,REFUND,6624.04,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Refund&am=29899.69&cu=INR,Refund of ₹29899.69 ready. Urgent: scan before it expires.,upi,rbi_collect@ybl,29899.69,INR,,0,0,0,0,0,57,1,0,0,1,REFUND,29899.69,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹663.86 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,663.86,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Refund&am=7644.09&cu=INR,Claim your prize money ₹7644.09 by scanning this QR.,upi,instant_win@paytm,7644.09,INR,,0,0,0,0,0,58,1,0,0,0,RECEIVE,7644.09,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=22518.52&cu=INR,E-commerce refund ₹22518.52 pending. Scan QR immediately.,upi,thief@okaxis,22518.52,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,22518.52,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=cashback99@upi&pn=Urgent&am=4973.68&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,cashback99@upi,4973.68,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,4973.68,1,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=BookMyShow&am=99.7&cu=INR,,upi,laundry@okhdfcbank,99.7,INR,,0,0,0,0,0,60,0,0,0,0,NONE,,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Payment&am=22488.1&cu=INR,Pay ₹487.31 for your subscription renewal.,upi,thief@okaxis,22488.1,INR,,0,0,0,0,0,54,0,0,0,0,PAY,487.31,0,0,0,1
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=income_tax@phonepe&pn=BookMyShow&am=1480.68&cu=INR,,upi,income_tax@phonepe,1480.68,INR,,0,0,0,0,0,63,1,0,0,0,NONE,,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹1217.07 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,1217.07,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Apollo%20Pharmacy&am=3453.11&cu=INR,Bill amount: ₹3453.11. Scan to pay Apollo Pharmacy.,upi,salon@kotak,3453.11,INR,,0,0,0,0,0,63,0,0,0,0,PAY,3453.11,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=4138.84&cu=INR,Congratulations! You have won ₹4138.84. Scan to claim.,upi,urgentpay@upi,4138.84,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,4138.84,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Govt&am=12337.77&cu=INR,Government initiative: claim your subsidy of ₹12337.77 by scanning QR.,upi,hacker@phonepe,12337.77,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,12337.77,0,1,1,0
+deep_link_payment,1,SUSPICIOUS,phonepe://pay?pa=helpdesk9@ybl&am=4833.01&cu=INR,,deep_link,helpdesk9@ybl,4833.01,INR,,0,0,0,0,0,48,0,0,0,0,NONE,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=govtrefund@upi&pn=McDonald's&am=4272.67&cu=INR,Scan to pay ₹4272.67 at McDonald's.,upi,govtrefund@upi,4272.67,INR,,0,0,0,0,0,59,1,0,0,0,PAY,4272.67,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=gym@phonepe&pn=Flipkart&am=4920.07&cu=INR,,upi,gym@phonepe,4920.07,INR,,0,0,0,0,0,54,0,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Urgent&am=2050.88&cu=INR,Last chance! Scan QR now to claim ₹2050.88 before it expires.,upi,scammer@paytm,2050.88,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,2050.88,1,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=income_tax@phonepe&pn=Dominos%20Pizza&am=1511.7&cu=INR,Bill amount: ₹1511.7. Scan to pay Dominos Pizza.,upi,income_tax@phonepe,1511.7,INR,,0,0,0,0,0,67,1,0,0,0,PAY,1511.7,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Govt&am=12914.05&cu=INR,Ministry of Finance: approved UPI refund ₹12914.05. Scan to collect.,upi,hacker@phonepe,12914.05,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,12914.05,0,1,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=verify_now@ybl&pn=Refund&am=6230.9&cu=INR,Your cashback of ₹6230.9 has been approved. Scan to collect.,upi,verify_now@ybl,6230.9,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,6230.9,0,0,1,0
+malicious_url,2,FRAUDULENT,http://10.0.0.1/checkout,Claim your reward now.,url,,,INR,http,1,0,0,24,0,24,1,0,0,0,RECEIVE,,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=cashback99@upi&pn=Verify&am=987.44&cu=INR,RBI has mandated KYC update. Scan QR urgently to verify.,upi,cashback99@upi,987.44,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Govt&am=7687.42&cu=INR,Government initiative: claim your subsidy of ₹7687.42 by scanning QR.,upi,urgentpay@upi,7687.42,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,7687.42,0,1,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Refund&am=49511.53&cu=INR,Income tax refund ₹49511.53 approved. Scan QR to collect.,upi,bank_alert@upi,49511.53,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,49511.53,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Cafe%20Coffee%20Day&am=2042.98&cu=INR,Your order total is ₹2042.98. Scan to complete payment.,upi,store@oksbi,2042.98,INR,,0,0,0,0,0,65,0,0,0,0,PAY,2042.98,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=Reliance%20Fresh&am=1646.89&cu=INR,,upi,laundry@okhdfcbank,1646.89,INR,,0,0,0,0,0,69,0,0,0,0,NONE,,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=fraud@upi&pn=Verify&am=0&cu=INR,,upi,fraud@upi,0,INR,,0,0,0,0,0,44,1,1,0,0,NONE,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=rbi_official@ybl&pn=Apollo%20Pharmacy&am=4743.57&cu=INR,,upi,rbi_official@ybl,4743.57,INR,,0,0,0,0,0,68,1,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Refund&am=5997.5&cu=INR,Receive ₹5997.5 in your account. Scan QR now.,upi,hacker@phonepe,5997.5,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,5997.5,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹527.96 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,527.96,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=income_tax@phonepe&pn=Cafe%20Coffee%20Day&am=4523.01&cu=INR,,upi,income_tax@phonepe,4523.01,INR,,0,0,0,0,0,72,1,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=support_team@upi&pn=Refund&am=8283.36&cu=INR,Receive ₹8283.36 in your account. Scan QR now.,upi,support_team@upi,8283.36,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,8283.36,0,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=prize_winner@paytm&pn=Verify&am=0&cu=INR,,upi,prize_winner@paytm,0,INR,,0,0,0,0,0,53,1,1,0,0,NONE,,0,0,0,0
+deep_link_payment,0,LEGITIMATE,bhim://pay?pa=cafe@ybl&am=3815.29&cu=INR,Pay ₹3815.29 via bhim.,deep_link,cafe@ybl,3815.29,INR,,0,0,0,0,0,40,0,0,0,0,PAY,3815.29,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Payment&am=14155.73&cu=INR,Pay ₹120.83 for your subscription renewal.,upi,prize_winner@paytm,14155.73,INR,,0,0,0,0,0,61,0,0,0,0,PAY,120.83,0,0,0,1
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Refund&am=9023.48&cu=INR,Your reward of ₹9023.48 is pending. Scan to receive.,upi,kyc_verify@phonepe,9023.48,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,9023.48,0,0,1,0
+malicious_url,2,FRAUDULENT,https://sbi-reward.click/prize,Scan to complete your payment.,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Verify&am=550.74&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,bank_alert@upi,550.74,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹2010.67 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,2010.67,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Refund&am=33741.24&cu=INR,Income tax refund ₹33741.24 approved. Scan QR to collect.,upi,bank_alert@upi,33741.24,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,33741.24,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Govt&am=9408.3&cu=INR,Government initiative: claim your subsidy of ₹9408.3 by scanning QR.,upi,thief@okaxis,9408.3,INR,,0,0,0,0,0,50,1,0,0,0,RECEIVE,9408.3,0,1,1,0
+malicious_url,2,FRAUDULENT,http://icici-verify.ga/account,Claim your reward now.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Verify&am=858.62&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,tax_refund@ybl,858.62,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+malicious_url,2,FRAUDULENT,https://paytm-refund.top/claim,,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Govt&am=12584.35&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,collect_now@ybl,12584.35,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,12584.35,0,1,1,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹2187.29 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,2187.29,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Dominos%20Pizza&am=509.09&cu=INR,Please pay ₹509.09 for your purchase at Dominos Pizza.,upi,salon@kotak,509.09,INR,,0,0,0,0,0,60,0,0,0,0,PAY,509.09,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=cashback99@upi&pn=Refund&am=9095.97&cu=INR,We are sending ₹9095.97 to your account. Scan to confirm receipt.,upi,cashback99@upi,9095.97,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,9095.97,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Refund&am=2510.77&cu=INR,₹2510.77 is being sent to you. Scan to accept.,upi,rbi_collect@ybl,2510.77,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,2510.77,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹2851.74 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,2851.74,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,gpay://pay?pa=support_team@upi&am=2909.55&cu=INR,,deep_link,support_team@upi,2909.55,INR,,0,0,0,0,0,48,1,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Urgent&am=2344.41&cu=INR,URGENT: scan within 1 hour or lose your ₹2344.41 refund forever.,upi,bank_alert@upi,2344.41,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,2344.41,1,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=account_fix@upi&pn=Big%20Bazaar&am=3573.29&cu=INR,Please pay ₹3573.29 for your purchase at Big Bazaar.,upi,account_fix@upi,3573.29,INR,,0,0,0,0,0,62,1,0,0,0,PAY,3573.29,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Verify&am=383.2&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,lucky_user@upi,383.2,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+deep_link_payment,0,LEGITIMATE,phonepe://pay?pa=petrol@oksbi&am=2107.33&cu=INR,,deep_link,petrol@oksbi,2107.33,INR,,0,0,0,0,0,47,0,0,0,0,NONE,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=McDonald's&am=1115.38&cu=INR,,upi,clinic@axl,1115.38,INR,,0,0,0,0,0,55,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=Zomato&am=2008.38&cu=INR,,upi,clinic@axl,2008.38,INR,,0,0,0,0,0,51,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Verify&am=722.0&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,attacker@ybl,722.0,INR,,0,0,0,0,0,51,1,0,0,0,VERIFY,,1,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Flipkart&am=1249.68&cu=INR,Pay ₹1249.68 to Flipkart.,upi,attacker@ybl,1249.68,INR,,0,0,0,0,0,55,0,0,0,0,PAY,1249.68,0,0,0,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,Scan to complete your payment.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Flipkart&am=1584.49&cu=INR,Pay ₹1584.49 to Flipkart.,upi,rbi_collect@ybl,1584.49,INR,,0,0,0,0,0,58,0,0,0,0,PAY,1584.49,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=Swiggy&am=1939.02&cu=INR,,upi,restaurant@okaxis,1939.02,INR,,0,0,0,0,0,58,0,0,0,0,NONE,,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=fake_merchant@upi&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,fake_merchant@upi,0,INR,,0,0,0,0,0,52,1,1,0,0,VERIFY,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Verify&am=868.63&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,tax_refund@ybl,868.63,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Zomato&am=4047.11&cu=INR,Payment of ₹4047.11 to Zomato.,upi,school@upi,4047.11,INR,,0,0,0,0,0,51,0,0,0,0,PAY,4047.11,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=bank_alert@upi&pn=Verify&am=0&cu=INR,Scan to verify your account.,upi,bank_alert@upi,0,INR,,0,0,0,0,0,49,1,1,0,0,VERIFY,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=BookMyShow&am=663.6&cu=INR,,upi,clinic@axl,663.6,INR,,0,0,0,0,0,53,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=gym@phonepe&pn=Swiggy&am=4975.99&cu=INR,Your order total is ₹4975.99. Scan to complete payment.,upi,gym@phonepe,4975.99,INR,,0,0,0,0,0,52,0,0,0,0,PAY,4975.99,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Refund&am=977.7&cu=INR,Claim your prize money ₹977.7 by scanning this QR.,upi,fake_merchant@upi,977.7,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,977.7,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹2091.89 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,2091.89,0,0,0,0
+malicious_url,2,FRAUDULENT,https://tinyurl.com/refund5000,Verify your account by scanning.,url,,,INR,https,0,0,1,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=McDonald's&am=675.85&cu=INR,,upi,merchant@okicici,675.85,INR,,0,0,0,0,0,60,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=helpdesk9@ybl&pn=Refund&am=8177.89&cu=INR,Refund processed: ₹8177.89. Scan QR to get money.,upi,helpdesk9@ybl,8177.89,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,8177.89,0,0,1,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Verify&am=314.89&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,fraud@upi,314.89,INR,,0,0,0,0,0,49,1,0,0,0,VERIFY,,1,0,0,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Govt&am=5656.94&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹5656.94.,upi,attacker@ybl,5656.94,INR,,0,0,0,0,0,51,1,0,0,0,RECEIVE,5656.94,0,1,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=helpdesk9@ybl&pn=Apollo%20Pharmacy&am=1271.93&cu=INR,,upi,helpdesk9@ybl,1271.93,INR,,0,0,0,0,0,65,1,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Verify&am=979.28&cu=INR,RBI has mandated KYC update. Scan QR urgently to verify.,upi,bank_support@upi,979.28,INR,,0,0,0,0,0,56,1,0,0,0,VERIFY,,1,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Cafe%20Coffee%20Day&am=227.74&cu=INR,Pay ₹227.74 to Cafe Coffee Day.,upi,fraud@upi,227.74,INR,,0,0,0,0,0,62,0,0,0,0,PAY,227.74,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=income_tax@phonepe&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,income_tax@phonepe,0,INR,,0,0,0,0,0,53,1,1,0,0,VERIFY,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Urgent&am=347.83&cu=INR,Account will be blocked in 24 hours. Scan QR immediately to verify.,upi,attacker@ybl,347.83,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,347.83,1,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Govt&am=15205.95&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,fraud@upi,15205.95,INR,,0,0,0,0,0,49,1,0,0,0,RECEIVE,15205.95,0,1,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=McDonald's&am=1996.49&cu=INR,Pay ₹1996.49 to McDonald's.,upi,bank_alert@upi,1996.49,INR,,0,0,0,0,0,59,0,0,0,0,PAY,1996.49,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Payment&am=13524.42&cu=INR,Pay ₹385.07 for your subscription renewal.,upi,fraud@upi,13524.42,INR,,0,0,0,0,0,52,0,0,0,0,PAY,385.07,0,0,0,1
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=47431.92&cu=INR,Refund of ₹47431.92 ready. Urgent: scan before it expires.,upi,scammer@paytm,47431.92,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,47431.92,0,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Payment&am=26001.19&cu=INR,Pay ₹309.09 for your subscription renewal.,upi,fraud@upi,26001.19,INR,,0,0,0,0,0,52,0,0,0,0,PAY,309.09,0,0,0,1
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Big%20Bazaar&am=4328.55&cu=INR,Bill amount: ₹4328.55. Scan to pay Big Bazaar.,upi,salon@kotak,4328.55,INR,,0,0,0,0,0,58,0,0,0,0,PAY,4328.55,0,0,0,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,Scan to complete your payment.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Big%20Bazaar&am=947.24&cu=INR,Pay ₹947.24 to Big Bazaar.,upi,thief@okaxis,947.24,INR,,0,0,0,0,0,58,0,0,0,0,PAY,947.24,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=Big%20Bazaar&am=621.37&cu=INR,Please pay ₹621.37 for your purchase at Big Bazaar.,upi,cafe@ybl,621.37,INR,,0,0,0,0,0,54,0,0,0,0,PAY,621.37,0,0,0,0
+malicious_url,2,FRAUDULENT,http://10.0.0.1/checkout,Claim your reward now.,url,,,INR,http,1,0,0,24,0,24,1,0,0,0,RECEIVE,,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=33534.04&cu=INR,Income tax refund ₹33534.04 approved. Scan QR to collect.,upi,thief@okaxis,33534.04,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,33534.04,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Urgent&am=3339.18&cu=INR,URGENT: scan within 1 hour or lose your ₹3339.18 refund forever.,upi,hacker@phonepe,3339.18,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,3339.18,1,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Verify&am=330.14&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,fake_merchant@upi,330.14,INR,,0,0,0,0,0,57,1,0,0,0,VERIFY,,1,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=bank_support@upi&pn=BookMyShow&am=4237.7&cu=INR,Please pay ₹4237.7 for your purchase at BookMyShow.,upi,bank_support@upi,4237.7,INR,,0,0,0,0,0,60,1,0,0,0,PAY,4237.7,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=McDonald's&am=697.33&cu=INR,Pay ₹697.33 to McDonald's.,upi,collect_now@ybl,697.33,INR,,0,0,0,0,0,59,0,0,0,0,PAY,697.33,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Govt&am=18073.58&cu=INR,Ministry of Finance: approved UPI refund ₹18073.58. Scan to collect.,upi,urgentpay@upi,18073.58,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,18073.58,0,1,1,0
+deep_link_payment,1,SUSPICIOUS,phonepe://pay?pa=bank_support@upi&am=1548.98&cu=INR,Pay ₹1548.98 via phonepe.,deep_link,bank_support@upi,1548.98,INR,,0,0,0,0,0,51,1,0,0,0,PAY,1548.98,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Urgent&am=2323.21&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,bank_alert@upi,2323.21,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,2323.21,1,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=reward_claim@paytm&pn=Apollo%20Pharmacy&am=4973.17&cu=INR,Your order total is ₹4973.17. Scan to complete payment.,upi,reward_claim@paytm,4973.17,INR,,0,0,0,0,0,70,1,0,0,0,PAY,4973.17,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Verify&am=946.17&cu=INR,RBI has mandated KYC update. Scan QR urgently to verify.,upi,kyc_verify@phonepe,946.17,INR,,0,0,0,0,0,58,1,0,0,0,VERIFY,,1,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=36342.93&cu=INR,Income tax refund ₹36342.93 approved. Scan QR to collect.,upi,scammer@paytm,36342.93,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,36342.93,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Govt&am=17590.98&cu=INR,Government initiative: claim your subsidy of ₹17590.98 by scanning QR.,upi,instant_win@paytm,17590.98,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,17590.98,0,1,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Govt&am=1396.82&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹1396.82.,upi,attacker@ybl,1396.82,INR,,0,0,0,0,0,51,1,0,0,0,RECEIVE,1396.82,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=grocery@okaxis&pn=Cafe%20Coffee%20Day&am=937.84&cu=INR,Your order total is ₹937.84. Scan to complete payment.,upi,grocery@okaxis,937.84,INR,,0,0,0,0,0,67,0,0,0,0,PAY,937.84,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=refund123@ybl&pn=Flipkart&am=3112.57&cu=INR,Payment of ₹3112.57 to Flipkart.,upi,refund123@ybl,3112.57,INR,,0,0,0,0,0,56,1,0,0,0,PAY,3112.57,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=BookMyShow&am=721.49&cu=INR,,upi,salon@kotak,721.49,INR,,0,0,0,0,0,55,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Big%20Bazaar&am=4216.26&cu=INR,,upi,store@oksbi,4216.26,INR,,0,0,0,0,0,58,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,phonepe://pay?pa=helpdesk9@ybl&am=2882.08&cu=INR,Pay ₹2882.08 via phonepe.,deep_link,helpdesk9@ybl,2882.08,INR,,0,0,0,0,0,48,0,0,0,0,PAY,2882.08,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=helpdesk9@ybl&pn=Apollo%20Pharmacy&am=2151.44&cu=INR,Scan to pay ₹2151.44 at Apollo Pharmacy.,upi,helpdesk9@ybl,2151.44,INR,,0,0,0,0,0,65,1,0,0,0,PAY,2151.44,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=39853.71&cu=INR,Your refund of ₹39853.71 has been initiated. Scan to receive.,upi,urgentpay@upi,39853.71,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,39853.71,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://checkout.billdesk.com/pay,Pay ₹2064.22 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,2064.22,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Verify&am=470.07&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,fraud@upi,470.07,INR,,0,0,0,0,0,49,1,0,0,0,VERIFY,,1,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=income_tax@phonepe&pn=Payment&am=2491.94&cu=INR,Pay ₹179.43 for your subscription renewal.,upi,income_tax@phonepe,2491.94,INR,,0,0,0,0,0,60,0,0,0,0,PAY,179.43,0,0,0,1
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=bakery@okicici&pn=Big%20Bazaar&am=830.85&cu=INR,,upi,bakery@okicici,830.85,INR,,0,0,0,0,0,60,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Refund&am=1091.52&cu=INR,Claim your prize money ₹1091.52 by scanning this QR.,upi,prize_winner@paytm,1091.52,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,1091.52,0,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=instant_win@paytm&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,instant_win@paytm,0,INR,,0,0,0,0,0,52,1,1,0,0,VERIFY,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=income_tax@phonepe&pn=Refund&am=2067.92&cu=INR,Your reward of ₹2067.92 is pending. Scan to receive.,upi,income_tax@phonepe,2067.92,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,2067.92,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=McDonald's&am=1864.11&cu=INR,,upi,cafe@ybl,1864.11,INR,,0,0,0,0,0,53,0,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=income_tax@phonepe&pn=Urgent&am=4340.91&cu=INR,Limited time offer: scan now to receive ₹4340.91 cashback.,upi,income_tax@phonepe,4340.91,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,4340.91,1,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=Swiggy&am=1013.6&cu=INR,,upi,clinic@axl,1013.6,INR,,0,0,0,0,0,50,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,bhim://pay?pa=account_fix@upi&am=4915.91&cu=INR,Pay ₹4915.91 via bhim.,deep_link,account_fix@upi,4915.91,INR,,0,0,0,0,0,47,0,0,0,0,PAY,4915.91,0,0,0,0
+deep_link_payment,0,LEGITIMATE,gpay://pay?pa=hotel@ibl&am=851.74&cu=INR,Pay ₹851.74 via gpay.,deep_link,hotel@ibl,851.74,INR,,0,0,0,0,0,40,0,0,0,0,PAY,851.74,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=reward_claim@paytm&pn=Urgent&am=4518.31&cu=INR,Account will be blocked in 24 hours. Scan QR immediately to verify.,upi,reward_claim@paytm,4518.31,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,4518.31,1,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Urgent&am=3461.88&cu=INR,Limited time offer: scan now to receive ₹3461.88 cashback.,upi,prize_winner@paytm,3461.88,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,3461.88,1,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Refund&am=1236.09&cu=INR,Receive ₹1236.09 in your account. Scan QR now.,upi,kyc_verify@phonepe,1236.09,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,1236.09,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Refund&am=27459.1&cu=INR,E-commerce refund ₹27459.1 pending. Scan QR immediately.,upi,instant_win@paytm,27459.1,INR,,0,0,0,0,0,58,1,0,0,1,REFUND,27459.1,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=BookMyShow&am=1105.11&cu=INR,Bill amount: ₹1105.11. Scan to pay BookMyShow.,upi,restaurant@okaxis,1105.11,INR,,0,0,0,0,0,62,0,0,0,0,PAY,1105.11,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=BookMyShow&am=3766.85&cu=INR,Your order total is ₹3766.85. Scan to complete payment.,upi,store@oksbi,3766.85,INR,,0,0,0,0,0,56,0,0,0,0,PAY,3766.85,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Urgent&am=172.82&cu=INR,Last chance! Scan QR now to claim ₹172.82 before it expires.,upi,thief@okaxis,172.82,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,172.82,1,0,1,0
+malicious_url,2,FRAUDULENT,http://10.0.0.1/checkout,Claim your reward now.,url,,,INR,http,1,0,0,24,0,24,1,0,0,0,RECEIVE,,0,0,1,0
+malicious_url,2,FRAUDULENT,https://tinyurl.com/refund5000,,url,,,INR,https,0,0,1,30,0,30,1,0,0,0,NONE,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=tax_refund@ybl&pn=BookMyShow&am=2454.89&cu=INR,Your order total is ₹2454.89. Scan to complete payment.,upi,tax_refund@ybl,2454.89,INR,,0,0,0,0,0,59,1,0,0,0,PAY,2454.89,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=cashback99@upi&pn=Flipkart&am=4199.77&cu=INR,,upi,cashback99@upi,4199.77,INR,,0,0,0,0,0,57,1,0,0,0,NONE,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Refund&am=24889.95&cu=INR,Income tax refund ₹24889.95 approved. Scan QR to collect.,upi,fraud@upi,24889.95,INR,,0,0,0,0,0,51,1,0,0,1,REFUND,24889.95,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=pharmacy@paytm&pn=Flipkart&am=2170.75&cu=INR,,upi,pharmacy@paytm,2170.75,INR,,0,0,0,0,0,57,0,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Urgent&am=4945.22&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,urgentpay@upi,4945.22,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,4945.22,1,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹2051.11 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,2051.11,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=Dominos%20Pizza&am=3791.12&cu=INR,Please pay ₹3791.12 for your purchase at Dominos Pizza.,upi,parking@ybl,3791.12,INR,,0,0,0,0,0,61,0,0,0,0,PAY,3791.12,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Govt&am=18347.49&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,fake_merchant@upi,18347.49,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,18347.49,0,1,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Payment&am=15084.19&cu=INR,Pay ₹248.92 for your subscription renewal.,upi,prize_winner@paytm,15084.19,INR,,0,0,0,0,0,61,0,0,0,0,PAY,248.92,0,0,0,1
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Verify&am=873.44&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,hacker@phonepe,873.44,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=43763.27&cu=INR,Bank refund ₹43763.27 on hold. Scan to release to your account.,upi,scammer@paytm,43763.27,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,43763.27,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=McDonald's&am=4222.12&cu=INR,Pay ₹4222.12 to McDonald's for your order.,upi,school@upi,4222.12,INR,,0,0,0,0,0,55,0,0,0,0,PAY,4222.12,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=Cafe%20Coffee%20Day&am=1417.43&cu=INR,,upi,parking@ybl,1417.43,INR,,0,0,0,0,0,65,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,gpay://pay?pa=verify_now@ybl&am=1951.54&cu=INR,,deep_link,verify_now@ybl,1951.54,INR,,0,0,0,0,0,46,1,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=McDonald's&am=4399.67&cu=INR,Bill amount: ₹4399.67. Scan to pay McDonald's.,upi,store@oksbi,4399.67,INR,,0,0,0,0,0,56,0,0,0,0,PAY,4399.67,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹1156.24 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,1156.24,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://secure.payu.in/transaction,Pay ₹1594.81 securely via our payment gateway.,url,,,INR,https,0,0,0,34,0,34,0,0,0,0,PAY,1594.81,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=bakery@okicici&pn=McDonald's&am=3038.44&cu=INR,Pay ₹3038.44 to McDonald's for your order.,upi,bakery@okicici,3038.44,INR,,0,0,0,0,0,59,0,0,0,0,PAY,3038.44,0,0,0,0
+malicious_url,2,FRAUDULENT,http://icici-verify.ga/account,Claim your reward now.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=govtrefund@upi&pn=McDonald's&am=179.59&cu=INR,Please pay ₹179.59 for your purchase at McDonald's.,upi,govtrefund@upi,179.59,INR,,0,0,0,0,0,58,1,0,0,0,PAY,179.59,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=28120.17&cu=INR,Income tax refund ₹28120.17 approved. Scan QR to collect.,upi,urgentpay@upi,28120.17,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,28120.17,0,0,1,0
+malicious_url,2,FRAUDULENT,http://payment-verify.free.tk/pay,Verify your account by scanning.,url,,,INR,http,0,0,0,33,0,33,1,0,0,0,RECEIVE,,0,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Payment&am=28742.11&cu=INR,Pay ₹302.76 for your subscription renewal.,upi,lucky_user@upi,28742.11,INR,,0,0,0,0,0,57,0,0,0,0,PAY,302.76,0,0,0,1
+malicious_url,2,FRAUDULENT,http://icici-verify.ga/account,,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=Cafe%20Coffee%20Day&am=864.95&cu=INR,Pay ₹864.95 to Cafe Coffee Day for your order.,upi,laundry@okhdfcbank,864.95,INR,,0,0,0,0,0,71,0,0,0,0,PAY,864.95,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=rbi_official@ybl&pn=Urgent&am=3008.96&cu=INR,Limited time offer: scan now to receive ₹3008.96 cashback.,upi,rbi_official@ybl,3008.96,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,3008.96,1,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Urgent&am=3482.38&cu=INR,Last chance! Scan QR now to claim ₹3482.38 before it expires.,upi,scammer@paytm,3482.38,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,3482.38,1,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Cafe%20Coffee%20Day&am=620.94&cu=INR,Bill amount: ₹620.94. Scan to pay Cafe Coffee Day.,upi,salon@kotak,620.94,INR,,0,0,0,0,0,64,0,0,0,0,PAY,620.94,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=reward_claim@paytm&pn=Refund&am=6156.8&cu=INR,Your reward of ₹6156.8 is pending. Scan to receive.,upi,reward_claim@paytm,6156.8,INR,,0,0,0,0,0,58,1,0,0,0,RECEIVE,6156.8,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=lucky_user@upi&pn=Swiggy&am=4536.0&cu=INR,Scan to pay ₹4536.0 at Swiggy.,upi,lucky_user@upi,4536.0,INR,,0,0,0,0,0,54,1,0,0,0,PAY,4536.0,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=support_team@upi&pn=Refund&am=794.78&cu=INR,Your cashback of ₹794.78 has been approved. Scan to collect.,upi,support_team@upi,794.78,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,794.78,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=5173.86&cu=INR,Refund of ₹5173.86 ready. Urgent: scan before it expires.,upi,thief@okaxis,5173.86,INR,,0,0,0,0,0,53,1,0,0,0,REFUND,5173.86,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹2439.03 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,2439.03,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹1346.68 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,1346.68,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Payment&am=23115.56&cu=INR,Pay ₹308.35 for your subscription renewal.,upi,hacker@phonepe,23115.56,INR,,0,0,0,0,0,57,0,0,0,0,PAY,308.35,0,0,0,1
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Refund&am=4618.47&cu=INR,₹4618.47 is being sent to you. Scan to accept.,upi,hacker@phonepe,4618.47,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,4618.47,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Verify&am=969.24&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,hacker@phonepe,969.24,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=16024.53&cu=INR,Refund of ₹16024.53 ready. Urgent: scan before it expires.,upi,thief@okaxis,16024.53,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,16024.53,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Apollo%20Pharmacy&am=1175.02&cu=INR,,upi,school@upi,1175.02,INR,,0,0,0,0,0,62,0,0,0,0,NONE,,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=fake_merchant@upi&pn=Verify&am=0&cu=INR,Zero charge verification. Scan QR.,upi,fake_merchant@upi,0,INR,,0,0,0,0,0,52,1,1,0,0,VERIFY,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=cashback99@upi&pn=McDonald's&am=2955.42&cu=INR,Scan to pay ₹2955.42 at McDonald's.,upi,cashback99@upi,2955.42,INR,,0,0,0,0,0,59,1,0,0,0,PAY,2955.42,0,0,0,0
+deep_link_payment,0,LEGITIMATE,paytm://pay?pa=restaurant@okaxis&am=1580.99&cu=INR,,deep_link,restaurant@okaxis,1580.99,INR,,0,0,0,0,0,50,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=govtrefund@upi&pn=Refund&am=2532.55&cu=INR,Claim your prize money ₹2532.55 by scanning this QR.,upi,govtrefund@upi,2532.55,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,2532.55,0,0,1,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Urgent&am=1686.48&cu=INR,Last chance! Scan QR now to claim ₹1686.48 before it expires.,upi,lucky_user@upi,1686.48,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,1686.48,1,0,1,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,Verify your account by scanning.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Reliance%20Fresh&am=1066.64&cu=INR,Pay ₹1066.64 to Reliance Fresh.,upi,fake_merchant@upi,1066.64,INR,,0,0,0,0,0,68,0,0,0,0,PAY,1066.64,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=bank_support@upi&pn=Big%20Bazaar&am=510.99&cu=INR,Scan to pay ₹510.99 at Big Bazaar.,upi,bank_support@upi,510.99,INR,,0,0,0,0,0,62,1,0,0,0,PAY,510.99,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Urgent&am=2279.01&cu=INR,Last chance! Scan QR now to claim ₹2279.01 before it expires.,upi,kyc_verify@phonepe,2279.01,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,2279.01,1,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=Dominos%20Pizza&am=4710.9&cu=INR,Payment of ₹4710.9 to Dominos Pizza.,upi,laundry@okhdfcbank,4710.9,INR,,0,0,0,0,0,67,0,0,0,0,PAY,4710.9,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=support_team@upi&pn=Verify&am=550.0&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,support_team@upi,550.0,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=14667.48&cu=INR,E-commerce refund ₹14667.48 pending. Scan QR immediately.,upi,scammer@paytm,14667.48,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,14667.48,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Verify&am=55.1&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,prize_winner@paytm,55.1,INR,,0,0,0,0,0,56,1,0,0,0,VERIFY,,1,0,0,0
+deep_link_payment,0,LEGITIMATE,phonepe://pay?pa=salon@kotak&am=3229.58&cu=INR,,deep_link,salon@kotak,3229.58,INR,,0,0,0,0,0,46,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,bhim://pay?pa=rbi_official@ybl&am=2610.93&cu=INR,Pay ₹2610.93 via bhim.,deep_link,rbi_official@ybl,2610.93,INR,,0,0,0,0,0,48,0,0,0,0,PAY,2610.93,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Refund&am=8472.67&cu=INR,We are sending ₹8472.67 to your account. Scan to confirm receipt.,upi,collect_now@ybl,8472.67,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,8472.67,0,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Payment&am=2317.1&cu=INR,Pay ₹227.87 for your subscription renewal.,upi,bank_alert@upi,2317.1,INR,,0,0,0,0,0,55,0,0,0,0,PAY,227.87,0,0,0,1
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Govt&am=5125.51&cu=INR,Ministry of Finance: approved UPI refund ₹5125.51. Scan to collect.,upi,scammer@paytm,5125.51,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,5125.51,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Big%20Bazaar&am=2009.14&cu=INR,Bill amount: ₹2009.14. Scan to pay Big Bazaar.,upi,school@upi,2009.14,INR,,0,0,0,0,0,57,0,0,0,0,PAY,2009.14,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=refund123@ybl&pn=Verify&am=622.39&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,refund123@ybl,622.39,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=income_tax@phonepe&pn=Payment&am=2226.77&cu=INR,Pay ₹58.43 for your subscription renewal.,upi,income_tax@phonepe,2226.77,INR,,0,0,0,0,0,60,0,0,0,0,PAY,58.43,0,0,0,1
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=McDonald's&am=180.47&cu=INR,Pay ₹180.47 to McDonald's.,upi,urgentpay@upi,180.47,INR,,0,0,0,0,0,57,0,0,0,0,PAY,180.47,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Govt&am=5510.92&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,fraud@upi,5510.92,INR,,0,0,0,0,0,48,1,0,0,0,RECEIVE,5510.92,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=petrol@oksbi&pn=BookMyShow&am=2284.86&cu=INR,Payment of ₹2284.86 to BookMyShow.,upi,petrol@oksbi,2284.86,INR,,0,0,0,0,0,57,0,0,0,0,PAY,2284.86,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Refund&am=5306.63&cu=INR,₹5306.63 is being sent to you. Scan to accept.,upi,fraud@upi,5306.63,INR,,0,0,0,0,0,50,1,0,0,0,RECEIVE,5306.63,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Refund&am=8570.97&cu=INR,Your reward of ₹8570.97 is pending. Scan to receive.,upi,attacker@ybl,8570.97,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,8570.97,0,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=reward_claim@paytm&pn=Payment&am=21406.47&cu=INR,Pay ₹275.12 for your subscription renewal.,upi,reward_claim@paytm,21406.47,INR,,0,0,0,0,0,61,1,0,0,0,PAY,275.12,0,0,0,1
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=24000.45&cu=INR,E-commerce refund ₹24000.45 pending. Scan QR immediately.,upi,thief@okaxis,24000.45,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,24000.45,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Refund&am=8969.96&cu=INR,Your reward of ₹8969.96 is pending. Scan to receive.,upi,account_fix@upi,8969.96,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,8969.96,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=tax_refund@ybl&pn=Flipkart&am=1750.15&cu=INR,Scan to pay ₹1750.15 at Flipkart.,upi,tax_refund@ybl,1750.15,INR,,0,0,0,0,0,57,1,0,0,0,PAY,1750.15,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=refund123@ybl&pn=Refund&am=5561.08&cu=INR,₹5561.08 is being sent to you. Scan to accept.,upi,refund123@ybl,5561.08,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,5561.08,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Refund&am=49834.94&cu=INR,Bank refund ₹49834.94 on hold. Scan to release to your account.,upi,collect_now@ybl,49834.94,INR,,0,0,0,0,0,57,1,0,0,1,REFUND,49834.94,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Govt&am=1940.31&cu=INR,Government initiative: claim your subsidy of ₹1940.31 by scanning QR.,upi,fraud@upi,1940.31,INR,,0,0,0,0,0,48,1,0,0,0,RECEIVE,1940.31,0,1,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=refund123@ybl&pn=Urgent&am=586.84&cu=INR,Account will be blocked in 24 hours. Scan QR immediately to verify.,upi,refund123@ybl,586.84,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,586.84,1,0,1,0
+deep_link_payment,1,SUSPICIOUS,paytm://pay?pa=tax_refund@ybl&am=664.6&cu=INR,Pay ₹664.6 via paytm.,deep_link,tax_refund@ybl,664.6,INR,,0,0,0,0,0,45,1,0,0,0,PAY,664.6,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=rbi_collect@ybl&pn=Verify&am=0&cu=INR,Zero charge verification. Scan QR.,upi,rbi_collect@ybl,0,INR,,0,0,0,0,0,50,1,1,0,0,VERIFY,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=petrol@oksbi&pn=McDonald's&am=4648.64&cu=INR,Please pay ₹4648.64 for your purchase at McDonald's.,upi,petrol@oksbi,4648.64,INR,,0,0,0,0,0,57,0,0,0,0,PAY,4648.64,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Urgent&am=3663.49&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,scammer@paytm,3663.49,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,3663.49,1,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=Zomato&am=1780.81&cu=INR,Payment of ₹1780.81 to Zomato.,upi,clinic@axl,1780.81,INR,,0,0,0,0,0,51,0,0,0,0,PAY,1780.81,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=28203.63&cu=INR,Refund of ₹28203.63 ready. Urgent: scan before it expires.,upi,urgentpay@upi,28203.63,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,28203.63,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Refund&am=3134.46&cu=INR,Refund processed: ₹3134.46. Scan QR to get money.,upi,account_fix@upi,3134.46,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,3134.46,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Reliance%20Fresh&am=2338.19&cu=INR,Bill amount: ₹2338.19. Scan to pay Reliance Fresh.,upi,school@upi,2338.19,INR,,0,0,0,0,0,61,0,0,0,0,PAY,2338.19,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=govtrefund@upi&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,govtrefund@upi,0,INR,,0,0,0,0,0,49,1,1,0,0,VERIFY,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=income_tax@phonepe&pn=Big%20Bazaar&am=815.64&cu=INR,Pay ₹815.64 to Big Bazaar for your order.,upi,income_tax@phonepe,815.64,INR,,0,0,0,0,0,64,1,0,0,0,PAY,815.64,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Cafe%20Coffee%20Day&am=1242.31&cu=INR,Please pay ₹1242.31 for your purchase at Cafe Coffee Day.,upi,school@upi,1242.31,INR,,0,0,0,0,0,64,0,0,0,0,PAY,1242.31,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=verify_now@ybl&pn=Swiggy&am=1812.97&cu=INR,Pay ₹1812.97 to Swiggy for your order.,upi,verify_now@ybl,1812.97,INR,,0,0,0,0,0,55,1,0,0,0,PAY,1812.97,0,0,0,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=Big%20Bazaar&am=4860.85&cu=INR,Scan to pay ₹4860.85 at Big Bazaar.,upi,merchant@okicici,4860.85,INR,,0,0,0,0,0,63,0,0,0,0,PAY,4860.85,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=Big%20Bazaar&am=1082.65&cu=INR,,upi,parking@ybl,1082.65,INR,,0,0,0,0,0,58,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=Reliance%20Fresh&am=1900.87&cu=INR,Scan to pay ₹1900.87 at Reliance Fresh.,upi,clinic@axl,1900.87,INR,,0,0,0,0,0,61,0,0,0,0,PAY,1900.87,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Govt&am=13659.31&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,scammer@paytm,13659.31,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,13659.31,0,1,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=support_team@upi&pn=Refund&am=9594.21&cu=INR,Scan this QR to receive ₹9594.21 refund.,upi,support_team@upi,9594.21,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,9594.21,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Refund&am=18238.72&cu=INR,E-commerce refund ₹18238.72 pending. Scan QR immediately.,upi,fake_merchant@upi,18238.72,INR,,0,0,0,0,0,59,1,0,0,1,REFUND,18238.72,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=bakery@okicici&pn=Apollo%20Pharmacy&am=4986.76&cu=INR,Scan to pay ₹4986.76 at Apollo Pharmacy.,upi,bakery@okicici,4986.76,INR,,0,0,0,0,0,66,0,0,0,0,PAY,4986.76,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Dominos%20Pizza&am=1130.13&cu=INR,Pay ₹1130.13 to Dominos Pizza.,upi,instant_win@paytm,1130.13,INR,,0,0,0,0,0,67,0,0,0,0,PAY,1130.13,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Zomato&am=333.01&cu=INR,Pay ₹333.01 to Zomato.,upi,hacker@phonepe,333.01,INR,,0,0,0,0,0,54,0,0,0,0,PAY,333.01,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=Cafe%20Coffee%20Day&am=198.3&cu=INR,,upi,parking@ybl,198.3,INR,,0,0,0,0,0,63,0,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Urgent&am=2973.28&cu=INR,Last chance! Scan QR now to claim ₹2973.28 before it expires.,upi,collect_now@ybl,2973.28,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,2973.28,1,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Reliance%20Fresh&am=3695.53&cu=INR,,upi,school@upi,3695.53,INR,,0,0,0,0,0,61,0,0,0,0,NONE,,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Payment&am=11197.74&cu=INR,Pay ₹310.06 for your subscription renewal.,upi,bank_alert@upi,11197.74,INR,,0,0,0,0,0,57,0,0,0,0,PAY,310.06,0,0,0,1
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹1420.71 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,1420.71,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Refund&am=37773.34&cu=INR,Bank refund ₹37773.34 on hold. Scan to release to your account.,upi,hacker@phonepe,37773.34,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,37773.34,0,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=urgentpay@upi&pn=Verify&am=0&cu=INR,,upi,urgentpay@upi,0,INR,,0,0,0,0,0,48,1,1,0,0,NONE,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Cafe%20Coffee%20Day&am=1175.38&cu=INR,,upi,school@upi,1175.38,INR,,0,0,0,0,0,64,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=cashback99@upi&pn=Refund&am=5031.31&cu=INR,₹5031.31 is being sent to you. Scan to accept.,upi,cashback99@upi,5031.31,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,5031.31,0,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=refund123@ybl&pn=Payment&am=24541.31&cu=INR,Pay ₹300.37 for your subscription renewal.,upi,refund123@ybl,24541.31,INR,,0,0,0,0,0,56,1,0,0,0,PAY,300.37,0,0,0,1
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Govt&am=7614.79&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,bank_alert@upi,7614.79,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,7614.79,0,1,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=28345.58&cu=INR,E-commerce refund ₹28345.58 pending. Scan QR immediately.,upi,scammer@paytm,28345.58,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,28345.58,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=rbi_official@ybl&pn=Verify&am=705.0&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,rbi_official@ybl,705.0,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Big%20Bazaar&am=2202.09&cu=INR,,upi,store@oksbi,2202.09,INR,,0,0,0,0,0,58,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Verify&am=551.16&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,kyc_verify@phonepe,551.16,INR,,0,0,0,0,0,58,1,0,0,0,VERIFY,,1,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=4630.03&cu=INR,Your refund of ₹4630.03 has been initiated. Scan to receive.,upi,urgentpay@upi,4630.03,INR,,0,0,0,0,0,54,1,0,0,0,REFUND,4630.03,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Swiggy&am=319.83&cu=INR,,upi,salon@kotak,319.83,INR,,0,0,0,0,0,51,0,0,0,0,NONE,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=Swiggy&am=1018.43&cu=INR,,upi,restaurant@okaxis,1018.43,INR,,0,0,0,0,0,58,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=Big%20Bazaar&am=1061.08&cu=INR,Your order total is ₹1061.08. Scan to complete payment.,upi,salon@kotak,1061.08,INR,,0,0,0,0,0,58,0,0,0,0,PAY,1061.08,0,0,0,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,Verify your account by scanning.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=Swiggy&am=2453.92&cu=INR,Payment of ₹2453.92 to Swiggy.,upi,hotel@ibl,2453.92,INR,,0,0,0,0,0,50,0,0,0,0,PAY,2453.92,0,0,0,0
+malicious_url,2,FRAUDULENT,http://192.168.1.100/upi,Claim your reward now.,url,,,INR,http,1,0,0,24,0,24,1,0,0,0,RECEIVE,,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Cafe%20Coffee%20Day&am=3317.16&cu=INR,,upi,school@upi,3317.16,INR,,0,0,0,0,0,64,0,0,0,0,NONE,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Apollo%20Pharmacy&am=57.5&cu=INR,,upi,store@oksbi,57.5,INR,,0,0,0,0,0,60,0,0,0,0,NONE,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=32649.24&cu=INR,E-commerce refund ₹32649.24 pending. Scan QR immediately.,upi,urgentpay@upi,32649.24,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,32649.24,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://secure.payu.in/transaction,Pay ₹1448.47 securely via our payment gateway.,url,,,INR,https,0,0,0,34,0,34,0,0,0,0,PAY,1448.47,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=pharmacy@paytm&pn=Flipkart&am=1367.19&cu=INR,,upi,pharmacy@paytm,1367.19,INR,,0,0,0,0,0,57,0,0,0,0,NONE,,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=support_team@upi&pn=Verify&am=0&cu=INR,,upi,support_team@upi,0,INR,,0,0,0,0,0,51,1,1,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Refund&am=4571.82&cu=INR,Your reward of ₹4571.82 is pending. Scan to receive.,upi,account_fix@upi,4571.82,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,4571.82,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Refund&am=3643.37&cu=INR,Your reward of ₹3643.37 is pending. Scan to receive.,upi,prize_winner@paytm,3643.37,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,3643.37,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=28233.76&cu=INR,Bank refund ₹28233.76 on hold. Scan to release to your account.,upi,thief@okaxis,28233.76,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,28233.76,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=account_fix@upi&pn=Apollo%20Pharmacy&am=1496.15&cu=INR,,upi,account_fix@upi,1496.15,INR,,0,0,0,0,0,67,1,0,0,0,NONE,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Swiggy&am=285.19&cu=INR,,upi,store@oksbi,285.19,INR,,0,0,0,0,0,51,0,0,0,0,NONE,,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹1884.99 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,1884.99,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=Big%20Bazaar&am=4531.42&cu=INR,Pay ₹4531.42 to Big Bazaar for your order.,upi,parking@ybl,4531.42,INR,,0,0,0,0,0,58,0,0,0,0,PAY,4531.42,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=helpdesk9@ybl&pn=Urgent&am=2099.77&cu=INR,Account will be blocked in 24 hours. Scan QR immediately to verify.,upi,helpdesk9@ybl,2099.77,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,2099.77,1,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=cashback99@upi&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,cashback99@upi,0,INR,,0,0,0,0,0,49,1,1,0,0,VERIFY,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=merchant@okicici&pn=Dominos%20Pizza&am=422.46&cu=INR,Scan to pay ₹422.46 at Dominos Pizza.,upi,merchant@okicici,422.46,INR,,0,0,0,0,0,65,0,0,0,0,PAY,422.46,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Refund&am=4499.08&cu=INR,Refund of ₹4499.08 ready. Urgent: scan before it expires.,upi,fraud@upi,4499.08,INR,,0,0,0,0,0,50,1,0,0,0,REFUND,4499.08,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Refund&am=15516.08&cu=INR,Income tax refund ₹15516.08 approved. Scan QR to collect.,upi,hacker@phonepe,15516.08,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,15516.08,0,0,1,0
+malicious_url,2,FRAUDULENT,https://paytm-refund.top/claim,,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,NONE,,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Payment&am=25054.36&cu=INR,Pay ₹170.35 for your subscription renewal.,upi,tax_refund@ybl,25054.36,INR,,0,0,0,0,0,57,1,0,0,0,PAY,170.35,0,0,0,1
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Urgent&am=3894.41&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,rbi_collect@ybl,3894.41,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,3894.41,1,0,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Zomato&am=806.83&cu=INR,Pay ₹806.83 to Zomato.,upi,fake_merchant@upi,806.83,INR,,0,0,0,0,0,57,0,0,0,0,PAY,806.83,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=govtrefund@upi&pn=Refund&am=685.55&cu=INR,We are sending ₹685.55 to your account. Scan to confirm receipt.,upi,govtrefund@upi,685.55,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,685.55,0,0,1,0
+malicious_url,2,FRAUDULENT,http://secure-upi.xyz/login,Verify your account by scanning.,url,,,INR,http,0,0,0,27,0,27,1,0,0,0,RECEIVE,,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://payments.cashfree.com/order,Pay ₹610.07 securely via our payment gateway.,url,,,INR,https,0,0,0,35,0,35,0,0,0,0,PAY,610.07,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Refund&am=15811.11&cu=INR,Bank refund ₹15811.11 on hold. Scan to release to your account.,upi,fraud@upi,15811.11,INR,,0,0,0,0,0,51,1,0,0,1,REFUND,15811.11,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Refund&am=15314.7&cu=INR,Refund of ₹15314.7 ready. Urgent: scan before it expires.,upi,instant_win@paytm,15314.7,INR,,0,0,0,0,0,58,1,0,0,1,REFUND,15314.7,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Urgent&am=4750.15&cu=INR,Limited time offer: scan now to receive ₹4750.15 cashback.,upi,hacker@phonepe,4750.15,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,4750.15,1,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=rbi_collect@ybl&pn=Verify&am=0&cu=INR,Scan to verify your account.,upi,rbi_collect@ybl,0,INR,,0,0,0,0,0,50,1,1,0,0,VERIFY,,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://checkout.billdesk.com/pay,Pay ₹2059.32 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,2059.32,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Verify&am=759.85&cu=INR,Complete your KYC by scanning this QR. Account will be blocked otherwise.,upi,hacker@phonepe,759.85,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=reward_claim@paytm&pn=Flipkart&am=855.84&cu=INR,Scan to pay ₹855.84 at Flipkart.,upi,reward_claim@paytm,855.84,INR,,0,0,0,0,0,60,1,0,0,0,PAY,855.84,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=shop@okhdfcbank&pn=Cafe%20Coffee%20Day&am=577.09&cu=INR,,upi,shop@okhdfcbank,577.09,INR,,0,0,0,0,0,68,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Refund&am=6951.85&cu=INR,Claim your prize money ₹6951.85 by scanning this QR.,upi,tax_refund@ybl,6951.85,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,6951.85,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Verify&am=626.55&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,rbi_collect@ybl,626.55,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+malicious_url,2,FRAUDULENT,https://paytm-refund.top/claim,Verify your account by scanning.,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹1472.24 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,1472.24,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=Cafe%20Coffee%20Day&am=4805.86&cu=INR,Please pay ₹4805.86 for your purchase at Cafe Coffee Day.,upi,hotel@ibl,4805.86,INR,,0,0,0,0,0,63,0,0,0,0,PAY,4805.86,0,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=reward_claim@paytm&pn=Verify&am=0&cu=INR,Scan to verify your account.,upi,reward_claim@paytm,0,INR,,0,0,0,0,0,53,1,1,0,0,VERIFY,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Govt&am=11953.14&cu=INR,RBI circular: verify your UPI account by scanning this official QR.,upi,collect_now@ybl,11953.14,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,11953.14,0,1,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=cashback99@upi&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,cashback99@upi,0,INR,,0,0,0,0,0,49,1,1,0,0,VERIFY,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=clinic@axl&pn=Dominos%20Pizza&am=276.83&cu=INR,Payment of ₹276.83 to Dominos Pizza.,upi,clinic@axl,276.83,INR,,0,0,0,0,0,59,0,0,0,0,PAY,276.83,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Verify&am=969.02&cu=INR,Complete your KYC by scanning this QR. Account will be blocked otherwise.,upi,account_fix@upi,969.02,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Govt&am=657.91&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹657.91.,upi,thief@okaxis,657.91,INR,,0,0,0,0,0,50,1,0,0,0,RECEIVE,657.91,0,1,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=rbi_official@ybl&pn=Verify&am=824.28&cu=INR,Complete your KYC by scanning this QR. Account will be blocked otherwise.,upi,rbi_official@ybl,824.28,INR,,0,0,0,0,0,56,1,0,0,0,VERIFY,,1,0,0,0
+malicious_url,2,FRAUDULENT,http://icici-verify.ga/account,Claim your reward now.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Refund&am=31430.34&cu=INR,Bank refund ₹31430.34 on hold. Scan to release to your account.,upi,bank_alert@upi,31430.34,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,31430.34,0,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=rbi_official@ybl&pn=Urgent&am=1185.59&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,rbi_official@ybl,1185.59,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,1185.59,1,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Verify&am=321.42&cu=INR,Complete your KYC by scanning this QR. Account will be blocked otherwise.,upi,rbi_collect@ybl,321.42,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=grocery@okaxis&pn=McDonald's&am=1425.46&cu=INR,Payment of ₹1425.46 to McDonald's.,upi,grocery@okaxis,1425.46,INR,,0,0,0,0,0,59,0,0,0,0,PAY,1425.46,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=30157.16&cu=INR,Bank refund ₹30157.16 on hold. Scan to release to your account.,upi,thief@okaxis,30157.16,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,30157.16,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Govt&am=6333.51&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,bank_alert@upi,6333.51,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,6333.51,0,1,1,0
+deep_link_payment,0,LEGITIMATE,paytm://pay?pa=pharmacy@paytm&am=1021.69&cu=INR,,deep_link,pharmacy@paytm,1021.69,INR,,0,0,0,0,0,47,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=prize_winner@paytm&pn=Refund&am=8390.41&cu=INR,Refund processed: ₹8390.41. Scan QR to get money.,upi,prize_winner@paytm,8390.41,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,8390.41,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Refund&am=6203.91&cu=INR,Your refund of ₹6203.91 is ready. Scan to receive.,upi,tax_refund@ybl,6203.91,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,6203.91,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=Flipkart&am=4814.54&cu=INR,Bill amount: ₹4814.54. Scan to pay Flipkart.,upi,hotel@ibl,4814.54,INR,,0,0,0,0,0,52,0,0,0,0,PAY,4814.54,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=refund123@ybl&pn=Payment&am=28654.18&cu=INR,Pay ₹359.07 for your subscription renewal.,upi,refund123@ybl,28654.18,INR,,0,0,0,0,0,56,1,0,0,0,PAY,359.07,0,0,0,1
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=Apollo%20Pharmacy&am=4329.8&cu=INR,Scan to pay ₹4329.8 at Apollo Pharmacy.,upi,cafe@ybl,4329.8,INR,,0,0,0,0,0,59,0,0,0,0,PAY,4329.8,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Govt&am=11708.83&cu=INR,Government initiative: claim your subsidy of ₹11708.83 by scanning QR.,upi,fake_merchant@upi,11708.83,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,11708.83,0,1,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=cashback99@upi&pn=Zomato&am=4737.42&cu=INR,Payment of ₹4737.42 to Zomato.,upi,cashback99@upi,4737.42,INR,,0,0,0,0,0,55,1,0,0,0,PAY,4737.42,0,0,0,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Payment&am=7251.5&cu=INR,Pay ₹280.56 for your subscription renewal.,upi,instant_win@paytm,7251.5,INR,,0,0,0,0,0,58,0,0,0,0,PAY,280.56,0,0,0,1
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Payment&am=4544.71&cu=INR,Pay ₹209.12 for your subscription renewal.,upi,tax_refund@ybl,4544.71,INR,,0,0,0,0,0,56,1,0,0,0,PAY,209.12,0,0,0,1
+deep_link_payment,0,LEGITIMATE,paytm://pay?pa=clinic@axl&am=3970.73&cu=INR,Pay ₹3970.73 via paytm.,deep_link,clinic@axl,3970.73,INR,,0,0,0,0,0,43,0,0,0,0,PAY,3970.73,0,0,0,0
+deep_link_payment,1,SUSPICIOUS,bhim://pay?pa=helpdesk9@ybl&am=2076.7&cu=INR,Pay ₹2076.7 via bhim.,deep_link,helpdesk9@ybl,2076.7,INR,,0,0,0,0,0,44,0,0,0,0,PAY,2076.7,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=govtrefund@upi&pn=Verify&am=912.6&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,govtrefund@upi,912.6,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Govt&am=18237.74&cu=INR,Government initiative: claim your subsidy of ₹18237.74 by scanning QR.,upi,scammer@paytm,18237.74,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,18237.74,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=McDonald's&am=1808.59&cu=INR,Bill amount: ₹1808.59. Scan to pay McDonald's.,upi,hotel@ibl,1808.59,INR,,0,0,0,0,0,54,0,0,0,0,PAY,1808.59,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Dominos%20Pizza&am=428.05&cu=INR,Pay ₹428.05 to Dominos Pizza.,upi,urgentpay@upi,428.05,INR,,0,0,0,0,0,62,0,0,0,0,PAY,428.05,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Verify&am=518.93&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,bank_support@upi,518.93,INR,,0,0,0,0,0,56,1,0,0,0,VERIFY,,1,0,0,0
+malicious_url,2,FRAUDULENT,http://secure-upi.xyz/login,Scan to complete your payment.,url,,,INR,http,0,0,0,27,0,27,1,0,0,0,RECEIVE,,0,0,1,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Refund&am=9115.82&cu=INR,We are sending ₹9115.82 to your account. Scan to confirm receipt.,upi,attacker@ybl,9115.82,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,9115.82,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=petrol@oksbi&pn=Zomato&am=1760.57&cu=INR,,upi,petrol@oksbi,1760.57,INR,,0,0,0,0,0,53,0,0,0,0,NONE,,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://secure.payu.in/transaction,Pay ₹1277.62 securely via our payment gateway.,url,,,INR,https,0,0,0,34,0,34,0,0,0,0,PAY,1277.62,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=income_tax@phonepe&pn=Refund&am=5456.59&cu=INR,Receive ₹5456.59 in your account. Scan QR now.,upi,income_tax@phonepe,5456.59,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,5456.59,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Verify&am=438.24&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,bank_alert@upi,438.24,INR,,0,0,0,0,0,54,1,0,0,0,VERIFY,,1,0,0,0
+malicious_url,2,FRAUDULENT,https://paytm-refund.top/claim,Claim your reward now.,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=reward_claim@paytm&pn=Zomato&am=1885.07&cu=INR,Payment of ₹1885.07 to Zomato.,upi,reward_claim@paytm,1885.07,INR,,0,0,0,0,0,59,1,0,0,0,PAY,1885.07,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹1447.19 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,1447.19,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=helpdesk9@ybl&pn=Reliance%20Fresh&am=1945.73&cu=INR,Your order total is ₹1945.73. Scan to complete payment.,upi,helpdesk9@ybl,1945.73,INR,,0,0,0,0,0,64,1,0,0,0,PAY,1945.73,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=govtrefund@upi&pn=Dominos%20Pizza&am=3083.51&cu=INR,,upi,govtrefund@upi,3083.51,INR,,0,0,0,0,0,64,1,0,0,0,NONE,,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=gym@phonepe&pn=Flipkart&am=686.02&cu=INR,,upi,gym@phonepe,686.02,INR,,0,0,0,0,0,53,0,0,0,0,NONE,,0,0,0,0
+malicious_url,2,FRAUDULENT,https://bit.ly/payconfirm,Scan to complete your payment.,url,,,INR,https,0,0,1,25,0,25,1,0,0,0,RECEIVE,,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Verify&am=772.13&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,instant_win@paytm,772.13,INR,,0,0,0,0,0,57,1,0,0,0,VERIFY,,1,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Govt&am=15877.9&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹15877.9.,upi,thief@okaxis,15877.9,INR,,0,0,0,0,0,51,1,0,0,0,RECEIVE,15877.9,0,1,1,0
+legitimate_https_payment,0,LEGITIMATE,https://secure.payu.in/transaction,Pay ₹1570.66 securely via our payment gateway.,url,,,INR,https,0,0,0,34,0,34,0,0,0,0,PAY,1570.66,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Reliance%20Fresh&am=658.16&cu=INR,Pay ₹658.16 to Reliance Fresh.,upi,instant_win@paytm,658.16,INR,,0,0,0,0,0,67,0,0,0,0,PAY,658.16,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=BookMyShow&am=766.11&cu=INR,,upi,parking@ybl,766.11,INR,,0,0,0,0,0,55,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=petrol@oksbi&pn=BookMyShow&am=667.89&cu=INR,,upi,petrol@oksbi,667.89,INR,,0,0,0,0,0,56,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,0,LEGITIMATE,bhim://pay?pa=merchant@okicici&am=1836.44&cu=INR,,deep_link,merchant@okicici,1836.44,INR,,0,0,0,0,0,48,0,0,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Verify&am=446.65&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,thief@okaxis,446.65,INR,,0,0,0,0,0,52,1,0,0,0,VERIFY,,1,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=verify_now@ybl&pn=Refund&am=9846.52&cu=INR,Scan this QR to receive ₹9846.52 refund.,upi,verify_now@ybl,9846.52,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,9846.52,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=tax_refund@ybl&pn=McDonald's&am=3385.23&cu=INR,,upi,tax_refund@ybl,3385.23,INR,,0,0,0,0,0,59,1,0,0,0,NONE,,0,0,0,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=kyc_verify@phonepe&pn=Urgent&am=4451.65&cu=INR,Limited time offer: scan now to receive ₹4451.65 cashback.,upi,kyc_verify@phonepe,4451.65,INR,,0,0,0,0,0,59,1,0,0,0,RECEIVE,4451.65,1,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=cafe@ybl&pn=Reliance%20Fresh&am=3315.77&cu=INR,,upi,cafe@ybl,3315.77,INR,,0,0,0,0,0,59,0,0,0,0,NONE,,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Refund&am=1586.7&cu=INR,Your cashback of ₹1586.7 has been approved. Scan to collect.,upi,tax_refund@ybl,1586.7,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,1586.7,0,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Payment&am=11179.68&cu=INR,Pay ₹131.63 for your subscription renewal.,upi,rbi_collect@ybl,11179.68,INR,,0,0,0,0,0,58,0,0,0,0,PAY,131.63,0,0,0,1
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=2766.18&cu=INR,Your reward of ₹2766.18 is pending. Scan to receive.,upi,thief@okaxis,2766.18,INR,,0,0,0,0,0,53,1,0,0,0,RECEIVE,2766.18,0,0,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=hotel@ibl&pn=Big%20Bazaar&am=2661.99&cu=INR,,upi,hotel@ibl,2661.99,INR,,0,0,0,0,0,56,0,0,0,0,NONE,,0,0,0,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=tax_refund@ybl&pn=Big%20Bazaar&am=1995.72&cu=INR,Your order total is ₹1995.72. Scan to complete payment.,upi,tax_refund@ybl,1995.72,INR,,0,0,0,0,0,61,1,0,0,0,PAY,1995.72,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Refund&am=30210.22&cu=INR,Bank refund ₹30210.22 on hold. Scan to release to your account.,upi,bank_alert@upi,30210.22,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,30210.22,0,0,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=Flipkart&am=613.59&cu=INR,,upi,parking@ybl,613.59,INR,,0,0,0,0,0,53,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=Cafe%20Coffee%20Day&am=4300.04&cu=INR,Payment of ₹4300.04 to Cafe Coffee Day.,upi,laundry@okhdfcbank,4300.04,INR,,0,0,0,0,0,72,0,0,0,0,PAY,4300.04,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=parking@ybl&pn=Reliance%20Fresh&am=989.99&cu=INR,Payment of ₹989.99 to Reliance Fresh.,upi,parking@ybl,989.99,INR,,0,0,0,0,0,61,0,0,0,0,PAY,989.99,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Verify&am=933.38&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,rbi_collect@ybl,933.38,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Govt&am=5478.87&cu=INR,Income Tax Department: scan QR to receive your ITR refund of ₹5478.87.,upi,urgentpay@upi,5478.87,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,5478.87,0,1,1,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=salon@kotak&pn=BookMyShow&am=1879.12&cu=INR,,upi,salon@kotak,1879.12,INR,,0,0,0,0,0,56,0,0,0,0,NONE,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=attacker@ybl&pn=Refund&am=25221.02&cu=INR,Income tax refund ₹25221.02 approved. Scan QR to collect.,upi,attacker@ybl,25221.02,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,25221.02,0,0,1,0
+malicious_url,2,FRAUDULENT,http://payment-verify.free.tk/pay,Claim your reward now.,url,,,INR,http,0,0,0,33,0,33,1,0,0,0,RECEIVE,,0,0,1,0
+malicious_url,2,FRAUDULENT,https://sbi-reward.click/prize,Scan to complete your payment.,url,,,INR,https,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=tax_refund@ybl&pn=Payment&am=28292.77&cu=INR,Pay ₹240.32 for your subscription renewal.,upi,tax_refund@ybl,28292.77,INR,,0,0,0,0,0,57,1,0,0,0,PAY,240.32,0,0,0,1
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Refund&am=2584.51&cu=INR,Claim your prize money ₹2584.51 by scanning this QR.,upi,bank_support@upi,2584.51,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,2584.51,0,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=account_fix@upi&pn=Verify&am=0&cu=INR,,upi,account_fix@upi,0,INR,,0,0,0,0,0,50,1,1,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=pharmacy@paytm&pn=Cafe%20Coffee%20Day&am=3806.1&cu=INR,Scan to pay ₹3806.1 at Cafe Coffee Day.,upi,pharmacy@paytm,3806.1,INR,,0,0,0,0,0,67,0,0,0,0,PAY,3806.1,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=laundry@okhdfcbank&pn=BookMyShow&am=925.32&cu=INR,,upi,laundry@okhdfcbank,925.32,INR,,0,0,0,0,0,62,0,0,0,0,NONE,,0,0,0,0
+deep_link_payment,0,LEGITIMATE,phonepe://pay?pa=salon@kotak&am=3052.97&cu=INR,,deep_link,salon@kotak,3052.97,INR,,0,0,0,0,0,46,0,0,0,0,NONE,,0,0,0,0
+malicious_url,2,FRAUDULENT,http://secure-upi.xyz/login,Claim your reward now.,url,,,INR,http,0,0,0,27,0,27,1,0,0,0,RECEIVE,,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Govt&am=15030.86&cu=INR,Government initiative: claim your subsidy of ₹15030.86 by scanning QR.,upi,bank_alert@upi,15030.86,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,15030.86,0,1,1,0
+amount_manipulation,2,FRAUDULENT,upi://pay?pa=support_team@upi&pn=Payment&am=24734.38&cu=INR,Pay ₹326.11 for your subscription renewal.,upi,support_team@upi,24734.38,INR,,0,0,0,0,0,59,1,0,0,0,PAY,326.11,0,0,0,1
+legitimate_https_payment,0,LEGITIMATE,https://pay.razorpay.com/checkout,Pay ₹2155.48 securely via our payment gateway.,url,,,INR,https,0,0,0,33,0,33,0,0,0,0,PAY,2155.48,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=petrol@oksbi&pn=Apollo%20Pharmacy&am=4378.71&cu=INR,Please pay ₹4378.71 for your purchase at Apollo Pharmacy.,upi,petrol@oksbi,4378.71,INR,,0,0,0,0,0,64,0,0,0,0,PAY,4378.71,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Refund&am=39008.98&cu=INR,E-commerce refund ₹39008.98 pending. Scan QR immediately.,upi,hacker@phonepe,39008.98,INR,,0,0,0,0,0,56,1,0,0,1,REFUND,39008.98,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=47112.12&cu=INR,E-commerce refund ₹47112.12 pending. Scan QR immediately.,upi,thief@okaxis,47112.12,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,47112.12,0,0,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=reward_claim@paytm&pn=BookMyShow&am=1017.84&cu=INR,Please pay ₹1017.84 for your purchase at BookMyShow.,upi,reward_claim@paytm,1017.84,INR,,0,0,0,0,0,63,1,0,0,0,PAY,1017.84,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Apollo%20Pharmacy&am=998.37&cu=INR,,upi,store@oksbi,998.37,INR,,0,0,0,0,0,62,0,0,0,0,NONE,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=35446.39&cu=INR,E-commerce refund ₹35446.39 pending. Scan QR immediately.,upi,thief@okaxis,35446.39,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,35446.39,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=8670.1&cu=INR,E-commerce refund ₹8670.1 pending. Scan QR immediately.,upi,scammer@paytm,8670.1,INR,,0,0,0,0,0,53,1,0,0,0,REFUND,8670.1,0,0,1,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Swiggy&am=323.75&cu=INR,Pay ₹323.75 to Swiggy.,upi,instant_win@paytm,323.75,INR,,0,0,0,0,0,57,0,0,0,0,PAY,323.75,0,0,0,0
+deep_link_payment,0,LEGITIMATE,gpay://pay?pa=petrol@oksbi&am=411.22&cu=INR,Pay ₹411.22 via gpay.,deep_link,petrol@oksbi,411.22,INR,,0,0,0,0,0,43,0,0,0,0,PAY,411.22,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://secure.payu.in/transaction,Pay ₹1707.8 securely via our payment gateway.,url,,,INR,https,0,0,0,34,0,34,0,0,0,0,PAY,1707.8,0,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=verify_now@ybl&pn=Refund&am=4914.11&cu=INR,Refund processed: ₹4914.11. Scan QR to get money.,upi,verify_now@ybl,4914.11,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,4914.11,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=collect_now@ybl&pn=Verify&am=267.52&cu=INR,RBI has mandated KYC update. Scan QR urgently to verify.,upi,collect_now@ybl,267.52,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=rbi_official@ybl&pn=Verify&am=0&cu=INR,,upi,rbi_official@ybl,0,INR,,0,0,0,0,0,51,1,1,0,0,NONE,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Verify&am=442.16&cu=INR,Complete your KYC by scanning this QR. Account will be blocked otherwise.,upi,account_fix@upi,442.16,INR,,0,0,0,0,0,55,1,0,0,0,VERIFY,,1,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=bank_support@upi&pn=Verify&am=0&cu=INR,Scan to verify your account.,upi,bank_support@upi,0,INR,,0,0,0,0,0,51,1,1,0,0,VERIFY,,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=17676.6&cu=INR,Bank refund ₹17676.6 on hold. Scan to release to your account.,upi,thief@okaxis,17676.6,INR,,0,0,0,0,0,53,1,0,0,1,REFUND,17676.6,0,0,1,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=scammer@paytm&pn=Refund&am=37401.17&cu=INR,Refund of ₹37401.17 ready. Urgent: scan before it expires.,upi,scammer@paytm,37401.17,INR,,0,0,0,0,0,55,1,0,0,1,REFUND,37401.17,0,0,1,0
+malicious_url,2,FRAUDULENT,http://secure-upi.xyz/login,Scan to complete your payment.,url,,,INR,http,0,0,0,27,0,27,1,0,0,0,RECEIVE,,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Verify&am=41.15&cu=INR,RBI has mandated KYC update. Scan QR urgently to verify.,upi,lucky_user@upi,41.15,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+malicious_url,2,FRAUDULENT,http://hdfc-bank-update.ml/kyc,Scan to complete your payment.,url,,,INR,http,0,0,0,30,0,30,1,0,0,0,RECEIVE,,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Govt&am=7632.61&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,instant_win@paytm,7632.61,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,7632.61,0,1,1,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=restaurant@okaxis&pn=Swiggy&am=4155.27&cu=INR,Pay ₹4155.27 to Swiggy for your order.,upi,restaurant@okaxis,4155.27,INR,,0,0,0,0,0,58,0,0,0,0,PAY,4155.27,0,0,0,0
+legitimate_no_message,0,LEGITIMATE,upi://pay?pa=store@oksbi&pn=Swiggy&am=1175.73&cu=INR,,upi,store@oksbi,1175.73,INR,,0,0,0,0,0,52,0,0,0,0,NONE,,0,0,0,0
+legitimate_merchant_payment,0,LEGITIMATE,upi://pay?pa=school@upi&pn=Flipkart&am=1140.08&cu=INR,Please pay ₹1140.08 for your purchase at Flipkart.,upi,school@upi,1140.08,INR,,0,0,0,0,0,53,0,0,0,0,PAY,1140.08,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=refund123@ybl&pn=Verify&am=332.78&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,refund123@ybl,332.78,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+receive_money_scam,2,FRAUDULENT,upi://pay?pa=urgentpay@upi&pn=Refund&am=3081.29&cu=INR,₹3081.29 is being sent to you. Scan to accept.,upi,urgentpay@upi,3081.29,INR,,0,0,0,0,0,54,1,0,0,0,RECEIVE,3081.29,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Govt&am=14622.23&cu=INR,Police cyber cell: scan QR for secure fund verification.,upi,rbi_collect@ybl,14622.23,INR,,0,0,0,0,0,55,1,0,0,0,RECEIVE,14622.23,0,1,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=account_fix@upi&pn=Urgent&am=3289.49&cu=INR,ALERT: Scan this QR immediately or your account will be deactivated.,upi,account_fix@upi,3289.49,INR,,0,0,0,0,0,56,1,0,0,0,RECEIVE,3289.49,1,0,1,0
+urgency_manipulation,2,FRAUDULENT,upi://pay?pa=instant_win@paytm&pn=Urgent&am=356.76&cu=INR,Limited time offer: scan now to receive ₹356.76 cashback.,upi,instant_win@paytm,356.76,INR,,0,0,0,0,0,57,1,0,0,0,RECEIVE,356.76,1,0,1,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=fake_merchant@upi&pn=Verify&am=0&cu=INR,Zero charge verification. Scan QR.,upi,fake_merchant@upi,0,INR,,0,0,0,0,0,52,1,1,0,0,VERIFY,,0,0,0,0
+qr_replacement_attack,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Big%20Bazaar&am=1962.05&cu=INR,Pay ₹1962.05 to Big Bazaar.,upi,rbi_collect@ybl,1962.05,INR,,0,0,0,0,0,62,0,0,0,0,PAY,1962.05,0,0,0,0
+legitimate_https_payment,0,LEGITIMATE,https://pay.hdfc.com/netbanking,Pay ₹1072.05 securely via our payment gateway.,url,,,INR,https,0,0,0,31,0,31,0,0,0,0,PAY,1072.05,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=income_tax@phonepe&pn=Verify&am=298.96&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,income_tax@phonepe,298.96,INR,,0,0,0,0,0,58,1,0,0,0,VERIFY,,1,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=hacker@phonepe&pn=Verify&am=29.81&cu=INR,Bank representative: scan this QR to complete your identity verification.,upi,hacker@phonepe,29.81,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=instant_win@paytm&pn=Verify&am=0&cu=INR,,upi,instant_win@paytm,0,INR,,0,0,0,0,0,52,1,1,0,0,NONE,,0,0,0,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=bank_alert@upi&pn=Govt&am=7930.0&cu=INR,Government initiative: claim your subsidy of ₹7930.0 by scanning QR.,upi,bank_alert@upi,7930.0,INR,,0,0,0,0,0,52,1,0,0,0,RECEIVE,7930.0,0,1,1,0
+malicious_url,2,FRAUDULENT,http://payment-verify.free.tk/pay,Scan to complete your payment.,url,,,INR,http,0,0,0,33,0,33,1,0,0,0,RECEIVE,,0,0,1,0
+authority_spoofing,2,FRAUDULENT,upi://pay?pa=fraud@upi&pn=Govt&am=3913.85&cu=INR,Ministry of Finance: approved UPI refund ₹3913.85. Scan to collect.,upi,fraud@upi,3913.85,INR,,0,0,0,0,0,48,1,0,0,0,RECEIVE,3913.85,0,1,1,0
+suspicious_vpa,1,SUSPICIOUS,upi://pay?pa=helpdesk9@ybl&pn=Big%20Bazaar&am=3424.06&cu=INR,Bill amount: ₹3424.06. Scan to pay Big Bazaar.,upi,helpdesk9@ybl,3424.06,INR,,0,0,0,0,0,60,1,0,0,0,PAY,3424.06,0,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=thief@okaxis&pn=Refund&am=11858.22&cu=INR,Refund of ₹11858.22 ready. Urgent: scan before it expires.,upi,thief@okaxis,11858.22,INR,,0,0,0,0,0,54,1,0,0,1,REFUND,11858.22,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=lucky_user@upi&pn=Verify&am=997.9&cu=INR,Urgent: KYC pending. Scan QR to prevent account suspension.,upi,lucky_user@upi,997.9,INR,,0,0,0,0,0,53,1,0,0,0,VERIFY,,1,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Verify&am=963.89&cu=INR,RBI has mandated KYC update. Scan QR urgently to verify.,upi,bank_support@upi,963.89,INR,,0,0,0,0,0,56,1,0,0,0,VERIFY,,1,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=fake_merchant@upi&pn=Refund&am=10033.82&cu=INR,Your refund of ₹10033.82 has been initiated. Scan to receive.,upi,fake_merchant@upi,10033.82,INR,,0,0,0,0,0,59,1,0,0,1,REFUND,10033.82,0,0,1,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=rbi_official@ybl&pn=Verify&am=964.42&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,rbi_official@ybl,964.42,INR,,0,0,0,0,0,56,1,0,0,0,VERIFY,,1,0,0,0
+zero_amount_token_collection,1,SUSPICIOUS,upi://pay?pa=rbi_collect@ybl&pn=Verify&am=0&cu=INR,Bank KYC — scan to authenticate.,upi,rbi_collect@ybl,0,INR,,0,0,0,0,0,50,1,1,0,0,VERIFY,,0,0,0,0
+fake_kyc_verification,2,FRAUDULENT,upi://pay?pa=bank_support@upi&pn=Verify&am=931.79&cu=INR,Your bank account needs verification. Scan QR to authenticate.,upi,bank_support@upi,931.79,INR,,0,0,0,0,0,56,1,0,0,0,VERIFY,,1,0,0,0
+fake_refund_scam,2,FRAUDULENT,upi://pay?pa=rbi_collect@ybl&pn=Refund&am=8300.48&cu=INR,Income tax refund ₹8300.48 approved. Scan QR to collect.,upi,rbi_collect@ybl,8300.48,INR,,0,0,0,0,0,56,1,0,0,0,REFUND,8300.48,0,0,1,0
